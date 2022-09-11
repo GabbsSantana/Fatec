@@ -15,9 +15,9 @@ Desenvolver um sistema web para controle de ordem de serviços (SOS) automatizar
 ## ♻️🔃 Metodologia
 A metodologia abordada durante o projeto foi a Scrum considerada um método ágil. Trata-se de um framework (conjunto de ações e estratégias para solucionar problemas de uma atividade complexa) para mais informações acesse o vídeo [Metodologia Scrum](https://www.youtube.com/watch?v=XfvQWnRgxG0&t=130s).
 
-## 📒 BACKLOG
+## 📙 SPRINT 1
 
-### 📙 SPRINT 1
+### 📒 BACKLOG
 *A imagem abaixo mostra como os itens do [__Backlog__]()
 
 ## 📈 BURNDOWN
