@@ -2,24 +2,27 @@ from flask import Flask,render_template,request,flash,redirect,url_for
 
 app = Flask(__name__)
 
-chamados = [{'lab':'',
-            'micro':'',
-            'problem':''}]
 
-chamados_abertos = [{'lab': 0,
-            'micro':0,
-            'problem':0}]
+class Chamados:
+    def __init__(self, laboratorio, micro='', problema='', registado=False):
+        self.laboratorio = laboratorio
+        self.micro = micro
+        self.problema = problema
+        self.registrado = registado
 
-aluno = [{'Nome':'aluno'},
-          {'e-mail':'aluno@fatec.sp.gov.br'}]
+class alunos:
+    def __init__(self, nome='', email=''):
+        self.nome = nome
+        self.email = email
+       
 
-chamado = []
-micro = []
-
+chamado = Chamados
+aluno = alunos
+chamados_abertos = []
 
 @app.route('/')
 def home():
-  return render_template('home.html',chamados=chamados)
+  return render_template('home.html')
 
 @app.route('/select/',methods=(['GET','POST']))
 def select():
@@ -28,22 +31,36 @@ def select():
     if not lab:
       flash('Escolha um laboratório')
     else:
-      chamados.append({'lab':lab})
-      chamado.append(lab)
-      
-
+      chamado.laboratorio = lab
       return redirect(url_for('layout'))
 
   return render_template('select.html')
   
 
-@app.route('/layout')
+@app.route('/layout/',methods=(['GET','POST']))
 def layout():
-  return render_template('layout.html',chamados=chamados,chamado=chamado)
+  if request.method == 'POST':
+    nome = request.form['nome']
+    email = request.form['e-mail']
+    micro = request.form['micro']
+    problem = request.form['problem']
+    if not micro or not problem:
+      flash('Escolha um laboratório')
+    else:
+      chamado.micro = micro
+      chamado.problema = problem
+      aluno.nome = nome
+      aluno.email = email
+      return redirect(url_for('done'))
 
-@app.route('/form')
-def form():
-  return render_template('form.html',chamados=chamados,chamado=chamado,micro=micro)
+  return render_template('layout.html',chamado=chamado,aluno=aluno,chamados_abertos=chamados_abertos)
+
+
+@app.route('/done/')
+def done(): 
+  chamado.registrado = True
+  chamados_abertos.append(chamado)
+  return render_template('done.html',chamado=chamado,aluno=aluno)
 
 
 app.run(debug=True)

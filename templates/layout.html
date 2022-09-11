@@ -7,17 +7,18 @@
     
     <div style="text-align: center; margin-bottom:50px">  
   <h2 >Laboratório escolhido:</h2>
-  <p>{{chamado[-1] or chamado[0]}}</p>
+
+    <p> {{ chamado.laboratorio}} </p>
+ 
+ 
+
 </div>
   <div id="layout">
-
-
- 
       <section id="layout-image">
         <img
-        src="{{url_for('static', filename=''+ chamado[-1][12:15]+'.jpg' )}}"
-        alt=""
-      />        </section>
+        src="{{url_for('static', filename=''+ chamado.laboratorio[12:15]+'.jpg' )}}"
+        alt=""/> 
+      </section>
 
 
       <section id="formulario_final">
@@ -31,49 +32,24 @@
             </label>
     
             <label for="completed"> N° do laboratório
-            <input type="text" value='{{chamado[-1] or chamado[0]}}' name="completed" disabled>
+            <input type="text" value='{{chamado.laboratorio}}' name="completed" disabled>
             </label>
     
-            
             <label for="micro">N° do computador
                 <input type="text" name="micro">
             </label>
     
             <label for="problem">O que está acontecendo? <br>
-    
                 <textarea name="problem" id="" cols="30" rows="2"></textarea>
     
             </label>
-    
             <input type="submit" value="Abrir Chamado" class="btn">
-    
         </form>
     
     
     </div>
       </section>
-  
-      <div id="tabela">
-      <table style="width: 100%;">
-        <h3 style="text-align: center;margin-bottom:15px">Chamados Abertos nesse laboratório</h3>
-          <tr>
-              <th>N° Laboratório</th>
-              <th>N° Micro</th>
-              <th>Reportado</th>
-          </tr>
-          {% for chamado in chamados %}
-          <tr class="chamado">
-            <td>{{ chamado['lab'] }}</td>
-            <td>{{ chamado['micro'] }}</td>
-            <td>{{ chamado['problem'] }}</td>
-          </tr>
-          {% endfor %}
-         
-        </table>
-      </div>
-
-  
-
+  <br>
     <section id="buttons">
       <a href="{{url_for('select')}}">
         <button class="btn" href="./select.html">Voltar</button>

@@ -1,0 +1,15 @@
+{% extends "style.html" %}
+
+{% block head %}
+
+  {{ super() }}
+
+ <h3>Chamado Aberto com sucesso!</h3>
+ 
+<p><strong>Nome: </strong>{{aluno.nome}}</p>
+<p><strong>E-mail: </strong>{{aluno.email}}</p>
+<p><strong>Laboratório: </strong>{{chamado.laboratorio[12:15]}}</p>
+<p><strong>N° do micro: </strong>{{chamado.micro}}</p>
+<p><strong>Problema Relatado: </strong>{{chamado.problema}}</p>
+ 
+ {% endblock %}
