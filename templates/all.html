@@ -1,0 +1,27 @@
+{% extends "style.html" %} {% block head %} {{ super() }}
+
+<div id="tabela">
+  <table style="width: 100%">
+    <h1 style="text-align: center; margin-bottom: 15px">Chamados Ativos</h1>
+    <tr>
+      <th>N° Laboratório</th>
+      <th>N° Micro</th>
+      <th>Reportado</th>
+    </tr>
+    {% for chamado in chamados %}
+    <tr class="chamado">
+      <td>{{ chamado.laboratorio[12:15]}}</td>
+      <td>{{ chamado.micro }}</td>
+      <td>{{ chamado.problema }}</td>
+    </tr>
+    {%endfor%}
+  </table>
+</div>
+
+<section id="buttons">
+  <a href="{{url_for('home')}}">
+    <button class="btn" href="home.html">Voltar</button>
+  </a>
+</section>
+
+{% endblock %}

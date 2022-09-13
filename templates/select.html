@@ -1,67 +1,53 @@
-{% extends "style.html" %}
+{% extends "style.html" %} {% block head %} {{ super() }} {% block content %}
 
-{% block head %}
+<form method="post">
+  <section id="labs">
+    <label for="laboratorios">Escolha um laboratório</label>
+    <select name="laboratorios" id="laboratorios">
+      <optgroup label="1° Andar">
+        <option value="Laboratório 101">Laboratório 101</option>
+        <option value="Laboratório 102">Laboratório 102</option>
+        <option value="Laboratório 103">Laboratório 103</option>
+        <option value="Laboratório 104">Laboratório 104</option>
+        <option value="Laboratório 105">Laboratório 105</option>
+        <option value="Laboratório 106">Laboratório 106</option>
+      </optgroup>
+      <optgroup label="2° Andar">
+        <option value="Laboratório 201">Laboratório 201</option>
+        <option value="Laboratório 202">Laboratório 202</option>
+        <option value="Laboratório 203">Laboratório 203</option>
+        <option value="Laboratório 204">Laboratório 204</option>
+        <option value="Laboratório 205">Laboratório 205</option>
+        <option value="Laboratório 206">Laboratório 206</option>
+      </optgroup>
+      <optgroup label="3° Andar">
+        <option value="Laboratório 301">Laboratório 301</option>
+        <option value="Laboratório 303">Laboratório 302</option>
+        <option value="Laboratório 303">Laboratório 303</option>
+        <option value="Laboratório 304">Laboratório 304</option>
+        <option value="Laboratório 305">Laboratório 305</option>
+        <option value="Laboratório 306">Laboratório 306</option>
+      </optgroup>
+      <optgroup label="4° Andar">
+        <option value="Laboratório 401">Laboratório 401</option>
+        <option value="Laboratório 402">Laboratório 402</option>
+        <option value="Laboratório 403">Laboratório 403</option>
+        <option value="Laboratório 404">Laboratório 404</option>
+        <option value="Laboratório 405">Laboratório 405</option>
+        <option value="Laboratório 406">Laboratório 406</option>
+        <option value="Laboratório 412">Laboratório 412</option>
+      </optgroup>
+    </select>
+    <br /><br />
 
-  {{ super() }}
+    <input type="submit" value="Selecionar Laboratório" class="btn" />
+  </section>
+</form>
 
-    
-{% block content %}
+<section id="buttons">
+  <a href="{{url_for('home')}}">
+    <button class="btn" href="home.html">Voltar</button>
+  </a>
+</section>
 
-     
-      <form  method="post">
-        <section id="labs">
-          <label for="laboratorios">Escolha um laboratório</label>
-          <select name="laboratorios" id="laboratorios">
-            <optgroup label="1° Andar">
-              <option value="Laboratório 101">Laboratório 101</option>
-              <option value="Laboratório 102">Laboratório 102</option>
-              <option value="Laboratório 103">Laboratório 103</option>
-              <option value="Laboratório 104">Laboratório 104</option>
-              <option value="Laboratório 105">Laboratório 105</option>
-              <option value="Laboratório 106">Laboratório 106</option>
-            </optgroup>
-            <optgroup label="2° Andar">
-              <option value="Laboratório 201">Laboratório 201</option>
-              <option value="Laboratório 202">Laboratório 202</option>
-              <option value="Laboratório 203">Laboratório 203</option>
-              <option value="Laboratório 204">Laboratório 204</option>
-              <option value="Laboratório 205">Laboratório 205</option>
-              <option value="Laboratório 206">Laboratório 206</option>
-            </optgroup>
-            <optgroup label="3° Andar">
-              <option value="Laboratório 301">Laboratório 301</option>
-              <option value="Laboratório 303">Laboratório 302</option>
-              <option value="Laboratório 303">Laboratório 303</option>
-              <option value="Laboratório 304">Laboratório 304</option>
-              <option value="Laboratório 305">Laboratório 305</option>
-              <option value="Laboratório 306">Laboratório 306</option>
-            </optgroup>
-            <optgroup label="4° Andar">
-              <option value="Laboratório 401">Laboratório 401</option>
-              <option value="Laboratório 402">Laboratório 402</option>
-              <option value="Laboratório 403">Laboratório 403</option>
-              <option value="Laboratório 404">Laboratório 404</option>
-              <option value="Laboratório 405">Laboratório 405</option>
-              <option value="Laboratório 406">Laboratório 406</option>
-              <option value="Laboratório 412">Laboratório 412</option>
-
-            </optgroup>
-          </select>
-          <br><br>
-         
-          <input type="submit" value="Selecionar Laboratório" class="btn">
-      
-      </section>
-        </form>
-
-        <section id="buttons">
-          <a href="{{url_for('home')}}">
-            <button class="btn" href="home.html">Voltar</button>
-          </a>
-          
-        </section>
-
-    {% endblock %}
-
-
-    {% endblock %}
+{% endblock %} {% endblock %}

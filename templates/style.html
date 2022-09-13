@@ -10,11 +10,12 @@
     {% block head %}
     <div id="app">
       <header>
+        <a href="{{url_for('home')}}">
         <img
           src="{{url_for('static', filename='index.png')}}"
           alt="fatec-logo"
           id="logo"
-        />
+        /></a>
         <h1>Sistema para abetura de chamados FATEC - São José dos Campos</h1>
       </header>
       {% endblock %}

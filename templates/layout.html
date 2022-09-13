@@ -5,14 +5,11 @@
   {{ super() }}
 
     
-    <div style="text-align: center; margin-bottom:50px">  
+<div style="text-align: center; margin-bottom:50px">  
   <h2 >Laboratório escolhido:</h2>
-
     <p> {{ chamado.laboratorio}} </p>
- 
- 
-
 </div>
+
   <div id="layout">
       <section id="layout-image">
         <img
@@ -20,15 +17,14 @@
         alt=""/> 
       </section>
 
-
       <section id="formulario_final">
         <form method="post">
             <label for="nome">Nome Completo:
-            <input type="text" name="nome">
+            <input type="text" name="nome" required>
             </label>
     
             <label for="email">E-mail:
-            <input type="email" name="e-mail">
+            <input type="email" name="e-mail" required>
             </label>
     
             <label for="completed"> N° do laboratório
@@ -36,24 +32,50 @@
             </label>
     
             <label for="micro">N° do computador
-                <input type="text" name="micro">
+                <input type="text" name="micro" required>
             </label>
     
             <label for="problem">O que está acontecendo? <br>
-                <textarea name="problem" id="" cols="30" rows="2"></textarea>
+                <textarea name="problem" id="" cols="30" rows="2" required></textarea>
     
             </label>
             <input type="submit" value="Abrir Chamado" class="btn">
         </form>
-    
-    
-    </div>
+      </div>
       </section>
   <br>
     <section id="buttons">
       <a href="{{url_for('select')}}">
         <button class="btn" href="./select.html">Voltar</button>
       </a>
-    </section>
+    </section> 
+
+
+
+    <div id="tabela">
+      <table style="width: 100%;">
+        <h1 style="text-align: center;margin-bottom:15px">Chamados Ativos no {{ chamado.laboratorio }} </h1>
+          <tr>
+              <th>N° Laboratório</th>
+              <th>N° Micro</th>
+              <th>Reportado</th>
+          </tr>
+          {% for chamados in chamados_abertos %}
+            {% if chamado.laboratorio == chamados.laboratorio%}
+                <tr class="chamado">
+                    <td>{{ chamados.laboratorio[12:15]}}</td>
+                    <td>{{ chamados.micro }}</td>
+                    <td>{{ chamados.problema }}</td>
+                
+                </tr>
+
+
+              {% endif %}
+
+          {%endfor%}
+         
+         
+        </table>
+      </div>
 
   {% endblock %}

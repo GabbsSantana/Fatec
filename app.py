@@ -1,14 +1,13 @@
 from flask import Flask,render_template,request,flash,redirect,url_for
 
 app = Flask(__name__)
-
+  
 
 class Chamados:
-    def __init__(self, laboratorio, micro='', problema='', registado=False):
+    def __init__(self, laboratorio='', micro='', problema=''):
         self.laboratorio = laboratorio
         self.micro = micro
         self.problema = problema
-        self.registrado = registado
 
 class alunos:
     def __init__(self, nome='', email=''):
@@ -19,6 +18,7 @@ class alunos:
 chamado = Chamados
 aluno = alunos
 chamados_abertos = []
+
 
 @app.route('/')
 def home():
@@ -44,13 +44,15 @@ def layout():
     email = request.form['e-mail']
     micro = request.form['micro']
     problem = request.form['problem']
-    if not micro or not problem:
-      flash('Escolha um laboratório')
+    if not chamado.laboratorio and micro == '':
+      flash('Primeiro escolha um laboratório')
+      return redirect(url_for('select'))
     else:
       chamado.micro = micro
       chamado.problema = problem
       aluno.nome = nome
       aluno.email = email
+      chamados_abertos.append(Chamados(laboratorio=chamado.laboratorio,micro=micro,problema=problem))
       return redirect(url_for('done'))
 
   return render_template('layout.html',chamado=chamado,aluno=aluno,chamados_abertos=chamados_abertos)
@@ -59,8 +61,10 @@ def layout():
 @app.route('/done/')
 def done(): 
   chamado.registrado = True
-  chamados_abertos.append(chamado)
   return render_template('done.html',chamado=chamado,aluno=aluno)
 
+@app.route('/all/')
+def all():
+  return render_template('all.html',chamados=chamados_abertos)
 
 app.run(debug=True)

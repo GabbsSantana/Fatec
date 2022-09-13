@@ -1,162 +1,154 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    max-width: 100vw;
-    max-height: 100vh;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  max-height: 100vh;
 }
-header img#logo{
-    width: 5%;
-    display: inline;
-    position: absolute;
-    left: 5px;
-    top: 5px;
-
-}
-
-h1{
-    margin: 25px auto;
-    display: block;
-    text-align: center;
-    font-size: 30px;
-
-
+header img#logo {
+  width: 5%;
+  display: inline;
+  position: absolute;
+  left: 5px;
+  top: 5px;
 }
 
-section#capa{
-    text-align: center;
-    width: 50%;
-    margin: 50px auto;
-}
-section#capa p{
-    margin-top: 40px;
+h1 {
+  margin: 25px auto;
+  display: block;
+  text-align: center;
+  font-size: 30px;
 }
 
-section#capa img{
-    width: 35vw;
-    border-radius: 2.5%;
-    margin: 2%;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;}
-
-section#capa img:hover{
-    scale: 1.2;
-    transition: 250ms;
-    transition-delay: 10ms;
-    transition-timing-function: ease-in;
+section#capa {
+  text-align: center;
+  width: 50%;
+  margin: 50px auto;
+}
+section#capa p {
+  margin-top: 40px;
 }
 
-section#buttons{
-    text-align: center;
-
+section#capa img {
+  width: 35vw;
+  border-radius: 2.5%;
+  margin: 2%;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-a{
-    text-decoration: none;
-}
-.btn{
-    width: 200px;
-    height: 25px;
-    
-    background-color: black;
-    color: white;
-    border-radius: 15px;
-    margin-bottom: 50px;
-}
-.btn:hover{
-    background-color: rgb(49, 181, 204);
-    border: antiquewhite;
-    color: black;
-    transition: 150ms;
-    transition-delay: 10ms;
-    transition-timing-function: ease-in;
-    cursor: pointer;
+section#capa img:hover {
+  scale: 1.2;
+  transition: 250ms;
+  transition-delay: 10ms;
+  transition-timing-function: ease-in;
 }
 
-section#labs{
-    display: block;
-    margin: auto;
-    text-align: center;
-    margin: 100px;
+section#buttons {
+  text-align: center;
 }
 
-label{
-    font-size: 30px;
-    font-weight: 700;
-    display: block;
-    text-align: center;
+a {
+  text-decoration: none;
+}
+.btn {
+  width: 200px;
+  height: 25px;
+
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  margin-bottom: 50px;
+}
+.btn:hover {
+  background-color: rgb(49, 181, 204);
+  border: antiquewhite;
+  color: black;
+  transition: 150ms;
+  transition-delay: 10ms;
+  transition-timing-function: ease-in;
+  cursor: pointer;
 }
 
-select#laboratorios{
-    width: 300px;
-    height: 25px;
-    text-align: center;
-    margin-top: 10px;
-    font-size: 15px;
-    border-radius: 2.5px;
-
+section#labs {
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin: 100px;
 }
 
-table, th, td {
-    border:1px solid black;
-  }
-
-#formulario_final{
-    
-    display: inline-block;
-    width: 500px;
-    height: 350px;
-    
+label {
+  font-size: 30px;
+  font-weight: 700;
+  display: block;
+  text-align: center;
 }
 
-#formulario_final label{
-    font-size: 15px;
-    text-align: center;
-    color: white;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-#formulario_final input{
-    display: block;
-    margin: auto;
-    border-radius: 10px;
-    border-color: transparent;
-    margin-top: 5px;
-    text-align: center;
-    width: 250px;
-
-
-}
-#formulario_final input[value]{
-    color: white;
-    text-align: center;
-}
-#formulario_final input:focus{
- color: black;
- text-align: center;
+select#laboratorios {
+  width: 300px;
+  height: 25px;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 15px;
+  border-radius: 2.5px;
 }
 
-
-
-div#tabela{
-    margin-bottom: 15px;
-    padding: 0 40px;
-}
-div#tabela td{
-    text-align: center;
+table,
+th,
+td {
+  border: 1px solid black;
 }
 
-div#layout{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(32, 112, 112);
-    width: fit-content;
-    margin: auto;
+#formulario_final {
+  display: inline-block;
+  width: 500px;
+  height: 350px;
 }
-div#layout img{
-    display: inline-block;
-    width: 500px;
-    height: 350px;
-    border-radius: 5px;
+
+#formulario_final label {
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+#formulario_final input {
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+  border-color: transparent;
+  margin-top: 5px;
+  text-align: center;
+  width: 250px;
+}
+#formulario_final input[value] {
+  color: white;
+  text-align: center;
+}
+#formulario_final input:focus {
+  color: black;
+  text-align: center;
+}
+
+div#tabela {
+  margin-bottom: 15px;
+  padding: 0 40px;
+}
+div#tabela td {
+  text-align: center;
+}
+
+div#layout {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(32, 112, 112);
+  width: fit-content;
+  margin: auto;
+}
+div#layout img {
+  display: inline-block;
+  width: 500px;
+  height: 350px;
+  border-radius: 5px;
 }

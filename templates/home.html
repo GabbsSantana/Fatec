@@ -1,33 +1,27 @@
-{% extends "style.html" %}
+{% extends "style.html" %} {% block head %} {{ super() }}
 
+<section id="capa">
+  <img
+    src="{{url_for('static', filename='552dcb3970de9591ee05_940x400_0_0_1_1.jpg')}}"
+    alt=""
+  />
 
-{% block head %}
+  <p>
+    Sistema para a abertura e consulta de chamados para manutenção dos micros
+    presentes no laboratório da FATEC-SJC Caso encontre um micro
+    danificado(teclado quebrado, mouse,Desktop) ou com um problema de software(
+    programa não abre, PC desligando sozinho) Abra um chamado para notificar o
+    time de manutenção.
+  </p>
+</section>
 
-  {{ super() }}
+<section id="buttons">
+  <a href="{{url_for('select')}}">
+    <button class="btn" href="./select.html">Abrir Chamado</button>
+  </a>
+  <a href="{{url_for('all')}}">
+    <button class="btn" href="./all.html">Consultar chamados</button>
+  </a>
+</section>
 
-      <section id="capa">
-        <img
-          src="{{url_for('static', filename='552dcb3970de9591ee05_940x400_0_0_1_1.jpg')}}"
-          alt=""
-        />
-        
-        <p>
-          Sistema para a abertura e consulta de chamados para manutenção dos
-          micros presentes no laboratório da FATEC-SJC Caso encontre um micro
-          danificado(teclado quebrado, mouse,Desktop) ou com um problema de
-          software( programa não abre, PC desligando sozinho) Abra um chamado
-          para notificar o time de manutenção.
-        </p>
-        
-      </section>
- 
-    <section id="buttons">
-      <a href="{{url_for('select')}}">
-        <button class="btn" href="./select.html">Abrir Chamado</button>
-      </a>
-      <a href="{{url_for('select')}}">
-        <button class="btn">Consultar chamados</button>
-      </a>
-    </section>
-  
-    {% endblock %}
+{% endblock %}
