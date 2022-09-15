@@ -1,3 +1,15 @@
+
+div#done{
+  margin-top: 100px;
+  margin-left: 500px;
+  text-align: center;
+  width:300px;
+  height:300px;
+  border:solid 1px;
+  border-radius:0px 20px 0px 20px;
+  border-color: rgb(255, 191, 0);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,7 +35,7 @@ h1 {
 section#capa {
   text-align: center;
   width: 50%;
-  margin: 50px auto;
+  margin: 20px auto;
 }
 section#capa p {
   margin-top: 40px;
@@ -57,7 +69,7 @@ a {
   background-color: black;
   color: white;
   border-radius: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 .btn:hover {
   background-color: rgb(49, 181, 204);
