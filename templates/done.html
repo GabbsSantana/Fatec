@@ -1,21 +1,20 @@
 {% extends "style.html" %} {% block head %} {{ super() }}
 
-<div id="done" >
-<br>
-<h3>Chamado Aberto com sucesso!</h3>
-<br>
-<p><strong>Nome: </strong>{{aluno.nome}}</p>
-<p><strong>E-mail: </strong>{{aluno.email}}</p>
-<p><strong>Laboratório: </strong>{{chamado.laboratorio[12:15]}}</p>
-<p><strong>N° do micro: </strong>{{chamado.micro}}</p>
-<p><strong>Problema Relatado: </strong>{{chamado.problema}}</p>
-<br><br>
-<a href="{{url_for('all')}}">
-  <button class="btn" href="./all.html">Consultar chamados</button>
-</a>
+<!-- Div responsável por apresentar ao usuário que o chamado foi aberto com sucesso -->
 
-
+<div id="done">
+  <br />
+  <h3>Chamado Aberto com sucesso!</h3>
+  <br />
+  <p><strong>Nome: </strong>{{aluno.nome}}</p>
+  <p><strong>E-mail: </strong>{{aluno.email}}</p>
+  <p><strong>Laboratório: </strong>{{chamado.laboratorio[12:15]}}</p>
+  <p><strong>N° do micro: </strong>{{chamado.micro}}</p>
+  <p><strong>Problema Relatado: </strong>{{chamado.problema}}</p>
+  <br /><br />
+  <a href="{{url_for('all')}}">
+    <button class="btn" href="./all.html">Consultar chamados</button>
+  </a>
 </div>
-
 
 {% endblock %}

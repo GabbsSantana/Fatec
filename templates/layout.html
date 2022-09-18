@@ -5,17 +5,22 @@
   {{ super() }}
 
     
+  <!-- Div responsável por apresentar ao usuário qual foi o Laboratório escolhido -->
+
 <div style="text-align: center; margin-bottom:50px">  
   <h2 >Laboratório escolhido:</h2>
     <p> {{ chamado.laboratorio}} </p>
 </div>
 
+  <!-- Div responsável por apresentar ao usuário o LAYOUT do laboratório escolhido -->
   <div id="layout">
       <section id="layout-image">
         <img
         src="{{url_for('static', filename=''+ chamado.laboratorio[12:15]+'.jpg' )}}"
         alt=""/> 
       </section>
+
+  <!-- Formulário responsável por receber dados do usuário refente a abertura do chamado -->
 
       <section id="formulario_final">
         <form method="post">
@@ -51,6 +56,7 @@
     </section> 
 
 
+  <!-- Div responsável por apresentar ao usuário chamados abertos nesse laboratório -->
 
     <div id="tabela">
       <table style="width: 100%;">

@@ -1,8 +1,13 @@
 {% extends "style.html" %} {% block head %} {{ super() }} {% block content %}
 
+<!-- Formulário Com tag SELECT  -->
+
 <form method="post">
   <section id="labs">
     <label for="laboratorios">Escolha um laboratório</label>
+
+    <!-- Opções de laboratórios para a seleção do usuário -->
+
     <select name="laboratorios" id="laboratorios">
       <optgroup label="1° Andar">
         <option value="Laboratório 101">Laboratório 101</option>
@@ -39,7 +44,7 @@
       </optgroup>
     </select>
     <br /><br />
-<br>
+    <br />
     <input type="submit" value="Selecionar Laboratório" class="btn" />
   </section>
 </form>
