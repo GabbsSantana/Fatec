@@ -18,8 +18,7 @@ A metodologia abordada durante o projeto foi a Scrum considerada um método ági
 ## 📙 SPRINT 1
 
 ### 📒 BACKLOG
-![image](https://user-images.githubusercontent.com/112169707/190915488-6d70ac6c-00e0-4a45-9088-691702545fb3.png)
-
+![image](https://user-images.githubusercontent.com/112169707/190915619-8b5a0c12-07dd-459e-8109-9f9c2e69751a.png)
 
 ## 📈 BURNDOWN
 *A imagem abaixo mostra como foi o andamento do Burndown [__Burndown__]()
