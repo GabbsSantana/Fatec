@@ -1,10 +1,14 @@
 from flask import Flask,render_template,request,flash,redirect,url_for
+import sqlite3
 
+connection = sqlite3.connect('database.db',check_same_thread=False)
+
+# Inicializando o app FLASK
 app = Flask(__name__)
-  
+
 # Criando classe para captura de dados do usuário e criação do chamad
 # Número do laboratório, número do micro, Problema relatado
-class Chamados:
+class Chamados: 
     def __init__(self, laboratorio='', micro='', problema=''):
         self.laboratorio = laboratorio
         self.micro = micro
@@ -33,10 +37,20 @@ def home():
 def select():
   if request.method == 'POST':
     lab = request.form['laboratorios']
+    
+      
+    connection.commit()
     if not lab:
       flash('Escolha um laboratório')
     else:
       chamado.laboratorio = lab
+      with open('schema.sql') as f:
+        connection.executescript(f.read())
+        cur = connection.cursor()
+        cur.execute("INSERT INTO chamados (laboratorio) VALUES(?)",
+              (lab,))
+        connection.commit()
+
       return redirect(url_for('layout'))
 
   return render_template('select.html')
@@ -53,6 +67,7 @@ def layout():
     email = request.form['e-mail']
     micro = request.form['micro']
     problem = request.form['problem']
+   
     if not chamado.laboratorio and micro == '':
       flash('Primeiro escolha um laboratório')
       return redirect(url_for('select'))
@@ -61,7 +76,16 @@ def layout():
       chamado.problema = problem
       aluno.nome = nome
       aluno.email = email
+
+      with open('schema.sql') as f:
+        connection.executescript(f.read())
+        cur = connection.cursor()
+        cur.execute("INSERT INTO alunos (nome,email) VALUES(?,?)",
+              (nome,email,))
+      connection.commit()
       chamados_abertos.append(Chamados(laboratorio=chamado.laboratorio,micro=micro,problema=problem))
+     
+
       return redirect(url_for('done'))
 
   return render_template('layout.html',chamado=chamado,aluno=aluno,chamados_abertos=chamados_abertos)
