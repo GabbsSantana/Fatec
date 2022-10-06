@@ -1,10 +1,13 @@
 from flask import Flask,render_template,request,flash,redirect,url_for
+import sqlite3
+#conectando banco de dados
 
+# Inicializando o app FLASK
 app = Flask(__name__)
-  
+
 # Criando classe para captura de dados do usuário e criação do chamad
 # Número do laboratório, número do micro, Problema relatado
-class Chamados:
+class Chamados: 
     def __init__(self, laboratorio='', micro='', problema=''):
         self.laboratorio = laboratorio
         self.micro = micro
@@ -33,6 +36,13 @@ def home():
 def select():
   if request.method == 'POST':
     lab = request.form['laboratorios']
+    with open('schema.sql') as f:
+      connection.executescript(f.read())
+      cur = connection.cursor()
+      cur.execute("INSERT INTO chamados (laboratorio) VALUES(?)",
+            (lab,))
+
+    connection.commit()
     if not lab:
       flash('Escolha um laboratório')
     else:
@@ -40,7 +50,6 @@ def select():
       return redirect(url_for('layout'))
 
   return render_template('select.html')
-  
 
 # Rota para para página Layout
 # Rota responsável por apresentar o layout do laboratório escolhido
