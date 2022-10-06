@@ -18,12 +18,15 @@
 </div>
 
 <div id="done">
+  <h1>Chamado utilizando SQLITE</h1>
   <br />
   <h3>Chamado Aberto com sucesso!</h3>
   <br />
-  {% for dados in data %}
-  <p>{{dados}}</p>
-  {% endfor %}
+  <p><strong>Nome: </strong>{{data[0]}}</p>
+  <p><strong>E-mail: </strong>{{data[1]}}</p>
+
+  <p><strong>Laboratório: </strong>{{laboratorio[0][12:15]}}</p>
+
   <br /><br />
   <a href="{{url_for('all')}}">
     <button class="btn" href="./all.html">Consultar chamados</button>

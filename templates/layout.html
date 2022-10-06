@@ -9,7 +9,7 @@
 
 <div style="text-align: center; margin-bottom:50px">  
   <h2 >Laboratório escolhido:</h2>
-    <p> {{ chamado.laboratorio}} </p>
+    <p> {{ laboratorio[0]}} </p>
 </div>
 
   <!-- Div responsável por apresentar ao usuário o LAYOUT do laboratório escolhido -->
@@ -33,7 +33,7 @@
             </label>
     
             <label for="completed"> N° do laboratório
-            <input type="text" value='{{chamado.laboratorio}}' name="completed" disabled>
+            <input type="text" value='{{laboratorio[0]}}' name="completed" disabled>
             </label>
     
             <label for="micro">N° do computador

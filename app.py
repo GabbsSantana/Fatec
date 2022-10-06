@@ -3,6 +3,15 @@ import sqlite3
 
 connection = sqlite3.connect('database.db',check_same_thread=False)
 
+with open('schema.sql') as f:
+  connection.executescript(f.read())
+
+def openDB():
+  connection = sqlite3.connect('database.db')
+  cur = connection.cursor()
+  return cur,connection
+
+
 # Inicializando o app FLASK
 app = Flask(__name__)
 
@@ -37,22 +46,20 @@ def home():
 def select():
   if request.method == 'POST':
     lab = request.form['laboratorios']
-          
+    
+      
     if not lab:
       flash('Escolha um laboratório')
     else:
       chamado.laboratorio = lab
-      with open('schema.sql') as f:
-        connection.executescript(f.read())
-        cur = connection.cursor()
-        cur.execute("INSERT INTO chamados (laboratorio) VALUES(?)",
+      cur,conn = openDB()
+      cur.execute("INSERT INTO chamados (laboratorio) VALUES(?)",
               (lab,))
-        connection.commit()
-
-        cur.execute('SELECT * FROM chamados')
-        data = cur.fetchall()
-        print(data)
-        connection.close()
+      conn.commit()
+      cur.execute('SELECT * FROM chamados')
+      data = cur.fetchall()
+      print(data)
+      conn.close()
 
       return redirect(url_for('layout'))
 
@@ -65,6 +72,17 @@ def select():
 # Rota responsável por receber nome e email do usuário
 @app.route('/layout/',methods=(['GET','POST']))
 def layout():
+  ## Chamando informação Laboratório xxx do SQLITE
+  cur,conn = openDB()
+  cur.execute("SELECT laboratorio FROM chamados")
+  lab = cur.fetchall()
+  if len(lab) > 0:
+    lab = lab[-1]
+  else:
+    lab = lab[0]
+    
+    
+
   if request.method == 'POST':
     nome = request.form['nome']
     email = request.form['e-mail']
@@ -80,36 +98,48 @@ def layout():
       aluno.nome = nome
       aluno.email = email
 
-      connection = sqlite3.connect('database.db',check_same_thread=False)
-      with open('schema.sql') as f:
-        
-        connection.executescript(f.read())
-        cur = connection.cursor()
-        cur.execute("INSERT INTO alunos (nome,email) VALUES(?,?)",
+      cur,conn = openDB()
+      cur.execute("INSERT INTO alunos (nome,email) VALUES(?,?)",
               (nome,email,))
-      connection.commit()
+      conn.commit()
       cur.execute('SELECT * FROM alunos')
       data = cur.fetchall()
       print(data)
-      cur.close()
-      chamados_abertos.append(Chamados(laboratorio=chamado.laboratorio,micro=micro,problema=problem))
+      conn.close()
+
+      
+
      
 
       return redirect(url_for('done'))
 
-  return render_template('layout.html',chamado=chamado,aluno=aluno,chamados_abertos=chamados_abertos)
+  return render_template('layout.html',chamado=chamado,aluno=aluno,chamados_abertos=chamados_abertos,laboratorio=lab)
 
 # Rota para página Done
 # Rota responsável por apresentar ao usuário a conclusão do chamado e os dados sobre
 @app.route('/done/')
 def done(): 
-  conn = sqlite3.connect('database.db')
-  cursor = conn.cursor()
-  cursor.execute('select nome,email from alunos')
-  alunoDB = cursor.fetchall()
-  conn.close()
+  cur,conn = openDB()
+  cur.execute('select nome,email from alunos')
+  alunoDB = cur.fetchall()
+  if len(alunoDB) > 0:
+    alunoDB = alunoDB[-1]
+  else:
+    alunoDB = alunoDB[0]
 
-  return render_template('done.html',chamado=chamado,aluno=aluno,data=alunoDB)
+   # Pegando dados sobre laboratório  
+  cur.execute("SELECT laboratorio FROM chamados")
+  lab = cur.fetchall()
+  if len(lab) > 0:
+    lab = lab[-1]
+  else:
+    lab = lab[0]
+  
+  
+
+
+  return render_template('done.html',chamado=chamado,aluno=alunoDB,
+  data=alunoDB,laboratorio=lab)
 
 # Rota para página all
 # Rota responsável por apresentar ao usuário todos os chamados abertos no sistema
