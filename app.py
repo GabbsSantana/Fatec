@@ -3,6 +3,12 @@ import sqlite3
 
 connection = sqlite3.connect('database.db',check_same_thread=False)
 
+class LaboratorioAtual:
+    def __init__(self, laboratorio=''):
+        self.laboratorio = laboratorio
+
+laboratorio_atual = LaboratorioAtual()
+
 with open('schema.sql') as f:
   connection.executescript(f.read())
 
@@ -11,12 +17,7 @@ def openDB():
   cur = connection.cursor()
   return cur,connection
 
-def lab_atual(lab):
-  if lab != '':
-    laboratorio = lab
-    return laboratorio
-  else:
-    return laboratorio
+
 
 # Inicializando o app FLASK
 app = Flask(__name__)
@@ -39,12 +40,11 @@ def select():
   openDB()
   if request.method == 'POST':
     lab = request.form['laboratorios']
-    lab_atual(lab)
 
     if not lab:
       flash('Escolha um laboratório')
     else:
-      lab_atual(lab)
+      laboratorio_atual.laboratorio = lab
       return redirect(url_for('layout'))
 
   return render_template('select.html')
@@ -68,12 +68,11 @@ def layout():
             (nome,email,))
     conn.commit()
     # Inserindo Atributos na entidade CHAMADOS
-    laboratorio = lab_atual('')
-    cur.execute("INSERT INTO chamados(laboratorio,micro,problema) VALUES (?,?,?)", (laboratorio,micro,problem,))
+    cur.execute("INSERT INTO chamados(laboratorio,micro,problema) VALUES (?,?,?)", (laboratorio_atual.laboratorio,micro,problem,))
     conn.commit()
     return redirect(url_for('done'))
 
-  return render_template('layout.html',laboratorio=laboratorio)
+  return render_template('layout.html',laboratorio=laboratorio_atual.laboratorio)
 
 # Rota para página Done
 # Rota responsável por apresentar ao usuário a conclusão do chamado e os dados sobre
