@@ -1,7 +1,9 @@
 DROP TABLE IF EXISTS chamados;
 CREATE TABLE chamados (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  laboratorio TEXT NOT NULL,
+  laboratorio TEXT,
+  micro INTEGER,
+  problema TEXT,
   FOREIGN KEY (id) REFERENCES user (id)
 );
 

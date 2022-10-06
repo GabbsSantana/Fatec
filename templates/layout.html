@@ -8,15 +8,15 @@
   <!-- Div responsável por apresentar ao usuário qual foi o Laboratório escolhido -->
 
 <div style="text-align: center; margin-bottom:50px">  
-  <h2 >Laboratório escolhido:</h2>
-    <p> {{ laboratorio[0]}} </p>
+  <h2 >Laboratório escolhido: {{laboratorio[12:15]}}</h2>
+    <p> {{ laboratorio[12:15]}} </p>
 </div>
 
   <!-- Div responsável por apresentar ao usuário o LAYOUT do laboratório escolhido -->
   <div id="layout">
       <section id="layout-image">
         <img
-        src="{{url_for('static', filename=''+ chamado.laboratorio[12:15]+'.jpg' )}}"
+        src="{{url_for('static', filename=''+ laboratorio[12:15]+'.jpg' )}}"
         alt=""/> 
       </section>
 
@@ -33,7 +33,7 @@
             </label>
     
             <label for="completed"> N° do laboratório
-            <input type="text" value='{{laboratorio[0]}}' name="completed" disabled>
+            <input type="text" value='{{laboratorio}}' name="completed" disabled>
             </label>
     
             <label for="micro">N° do computador
@@ -55,31 +55,6 @@
       </a>
     </section> 
 
-
-  <!-- Div responsável por apresentar ao usuário chamados abertos nesse laboratório -->
-
-    <div id="tabela">
-      <table style="width: 100%;">
-        <h1 style="text-align: center;margin-bottom:15px">Chamados Ativos no {{ chamado.laboratorio }} </h1>
-          <tr>
-              <th>N° Laboratório</th>
-              <th>N° Micro</th>
-              <th>Reportado</th>
-          </tr>
-          {% for chamados in chamados_abertos %}
-            {% if chamado.laboratorio == chamados.laboratorio%}
-                <tr class="chamado">
-                    <td>{{ chamados.laboratorio[12:15]}}</td>
-                    <td>{{ chamados.micro }}</td>
-                    <td>{{ chamados.problema }}</td>
-                
-                </tr>
-
-
-              {% endif %}
-
-          {%endfor%}
-         
          
         </table>
       </div>
