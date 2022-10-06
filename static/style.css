@@ -50,9 +50,9 @@ section#capa img {
 
 section#capa img:hover {
   scale: 1.2;
-  transition: 250ms;
-  transition-delay: 10ms;
   transition-timing-function: ease-in;
+  transition-delay: 250ms;
+  transition-duration: 500ms;
 }
 
 section#buttons {
@@ -163,4 +163,14 @@ div#layout img {
   width: 500px;
   height: 350px;
   border-radius: 5px;
+}
+
+#layout-lab:hover{
+  transition-timing-function: ease-in;
+  transition-delay: 250ms;
+  transition-duration: 500ms;
+  
+}
+#layout-lab{
+  margin-top: 5px;
 }

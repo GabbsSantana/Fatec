@@ -10,11 +10,11 @@
       <th>N° Micro</th>
       <th>Reportado</th>
     </tr>
-    {% for chamado in chamados %}
+    {% for i in range(0, (chamado|length) ,1) %}
     <tr class="chamado">
-      <td>{{ chamado.laboratorio[12:15]}}</td>
-      <td>{{ chamado.micro }}</td>
-      <td>{{ chamado.problema }}</td>
+      <td>{{ chamado[i][0]}}</td>
+      <td>{{ chamado[i][1]}}</td>
+      <td>{{ chamado[i][2]}}</td>
     </tr>
     {%endfor%}
   </table>

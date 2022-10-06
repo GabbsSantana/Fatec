@@ -14,9 +14,15 @@
   <!-- Div responsável por apresentar ao usuário o LAYOUT do laboratório escolhido -->
   <div id="layout">
       <section id="layout-image">
-        <img
-        src="{{url_for('static', filename=''+ laboratorio[12:15]+'.jpg' )}}"
+        {% if (laboratorio[12] == '4') %}
+        <img id="layout-lab"
+        src="{{url_for('static', filename='412'+'.png' )}}"
         alt=""/> 
+        {%  else %}
+        <img id="layout-lab"
+        src="{{url_for('static', filename=''+ laboratorio[12:15]+'.png' )}}"
+        alt=""/> 
+        {% endif %}
       </section>
 
   <!-- Formulário responsável por receber dados do usuário refente a abertura do chamado -->
@@ -36,7 +42,7 @@
             </label>
     
             <label for="micro">N° do computador
-                <input type="text" name="micro" required>
+                <input type="text" name="micro" maxlength="2" >
             </label>
     
             <label for="problem">O que está acontecendo? <br>

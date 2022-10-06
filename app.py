@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request,flash,redirect,url_for
 import sqlite3
 
-connection = sqlite3.connect('database.db',check_same_thread=False)
+connection = sqlite3.connect('database.db')
 
 class LaboratorioAtual:
     def __init__(self, laboratorio=''):
@@ -9,22 +9,13 @@ class LaboratorioAtual:
 
 laboratorio_atual = LaboratorioAtual()
 
-with open('schema.sql') as f:
-  connection.executescript(f.read())
-
 def openDB():
   connection = sqlite3.connect('database.db')
   cur = connection.cursor()
   return cur,connection
 
-
-
 # Inicializando o app FLASK
 app = Flask(__name__)
-
-# Criando classe para captura de dados do usuário e criação do chamad
-# Número do laboratório, número do micro, Problema relatado
-
 
 
 # Rota para página home
@@ -67,9 +58,14 @@ def layout():
     cur.execute("INSERT INTO alunos (nome,email) VALUES(?,?)",
             (nome,email,))
     conn.commit()
+
     # Inserindo Atributos na entidade CHAMADOS
     cur.execute("INSERT INTO chamados(laboratorio,micro,problema) VALUES (?,?,?)", (laboratorio_atual.laboratorio,micro,problem,))
     conn.commit()
+
+    conn.close()
+
+    # Redirecionando para página DONE
     return redirect(url_for('done'))
 
   return render_template('layout.html',laboratorio=laboratorio_atual.laboratorio)
@@ -79,6 +75,8 @@ def layout():
 @app.route('/done/')
 def done(): 
   cur,conn = openDB()
+
+  # Pegando dados da Entidade Alunos  
   cur.execute('select nome,email from alunos')
   alunoDB = cur.fetchall()
   if len(alunoDB) > 0:
@@ -86,7 +84,7 @@ def done():
   else:
     alunoDB = alunoDB[0]
 
-   # Pegando dados sobre laboratório  
+   # Pegando dados da Entidade CHAMADOS  
   cur.execute("SELECT laboratorio,micro,problema FROM chamados")
   lab = cur.fetchall()
   if len(lab) > 0:
@@ -94,15 +92,23 @@ def done():
   else:
     lab = lab[0]
   
-  
-
-
+  conn.close()
   return render_template('done.html', data=alunoDB,laboratorio=lab)
 
 # Rota para página all
 # Rota responsável por apresentar ao usuário todos os chamados abertos no sistema
 @app.route('/all/')
 def all():
-  return render_template('all.html')
+  cur,conn = openDB()
+  cur.execute('select nome,email from alunos')
+  alunoDB = cur.fetchall()
+  
+   # Pegando dados sobre laboratório  
+  cur.execute("SELECT laboratorio,micro,problema FROM chamados")
+  lab = cur.fetchall()
+  
+  conn.close()
+  return render_template('all.html',alunos=alunoDB,chamado=lab)
+
 
 app.run(debug=True)
