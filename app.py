@@ -37,9 +37,7 @@ def home():
 def select():
   if request.method == 'POST':
     lab = request.form['laboratorios']
-    
-      
-    connection.commit()
+          
     if not lab:
       flash('Escolha um laboratório')
     else:
@@ -50,6 +48,11 @@ def select():
         cur.execute("INSERT INTO chamados (laboratorio) VALUES(?)",
               (lab,))
         connection.commit()
+
+        cur.execute('SELECT * FROM chamados')
+        data = cur.fetchall()
+        print(data)
+        connection.close()
 
       return redirect(url_for('layout'))
 
@@ -77,12 +80,18 @@ def layout():
       aluno.nome = nome
       aluno.email = email
 
+      connection = sqlite3.connect('database.db',check_same_thread=False)
       with open('schema.sql') as f:
+        
         connection.executescript(f.read())
         cur = connection.cursor()
         cur.execute("INSERT INTO alunos (nome,email) VALUES(?,?)",
               (nome,email,))
       connection.commit()
+      cur.execute('SELECT * FROM alunos')
+      data = cur.fetchall()
+      print(data)
+      cur.close()
       chamados_abertos.append(Chamados(laboratorio=chamado.laboratorio,micro=micro,problema=problem))
      
 
@@ -94,8 +103,13 @@ def layout():
 # Rota responsável por apresentar ao usuário a conclusão do chamado e os dados sobre
 @app.route('/done/')
 def done(): 
-  chamado.registrado = True
-  return render_template('done.html',chamado=chamado,aluno=aluno)
+  conn = sqlite3.connect('database.db')
+  cursor = conn.cursor()
+  cursor.execute('select nome,email from alunos')
+  alunoDB = cursor.fetchall()
+  conn.close()
+
+  return render_template('done.html',chamado=chamado,aluno=aluno,data=alunoDB)
 
 # Rota para página all
 # Rota responsável por apresentar ao usuário todos os chamados abertos no sistema

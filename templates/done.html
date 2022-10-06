@@ -17,4 +17,17 @@
   </a>
 </div>
 
+<div id="done">
+  <br />
+  <h3>Chamado Aberto com sucesso!</h3>
+  <br />
+  {% for dados in data %}
+  <p>{{dados}}</p>
+  {% endfor %}
+  <br /><br />
+  <a href="{{url_for('all')}}">
+    <button class="btn" href="./all.html">Consultar chamados</button>
+  </a>
+</div>
+
 {% endblock %}
