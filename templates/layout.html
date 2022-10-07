@@ -8,16 +8,21 @@
   <!-- Div responsável por apresentar ao usuário qual foi o Laboratório escolhido -->
 
 <div style="text-align: center; margin-bottom:50px">  
-  <h2 >Laboratório escolhido:</h2>
-    <p> {{ chamado.laboratorio}} </p>
+  <h2 >Laboratório escolhido: {{laboratorio[12:15]}}</h2>
 </div>
 
   <!-- Div responsável por apresentar ao usuário o LAYOUT do laboratório escolhido -->
   <div id="layout">
       <section id="layout-image">
-        <img
-        src="{{url_for('static', filename=''+ chamado.laboratorio[12:15]+'.jpg' )}}"
+        {% if (laboratorio[12] == '4' and laboratorio[13:15] != '01' and laboratorio[13:15] != '02') %}
+        <img id="layout-lab"
+        src="{{url_for('static', filename='412'+'.png' )}}"
         alt=""/> 
+        {%  else %}
+        <img id="layout-lab"
+        src="{{url_for('static', filename=''+ laboratorio[12:15]+'.png' )}}"
+        alt=""/> 
+        {% endif %}
       </section>
 
   <!-- Formulário responsável por receber dados do usuário refente a abertura do chamado -->
@@ -33,11 +38,11 @@
             </label>
     
             <label for="completed"> N° do laboratório
-            <input type="text" value='{{chamado.laboratorio}}' name="completed" disabled>
+            <input type="text" value='{{laboratorio}}' name="completed" disabled>
             </label>
     
             <label for="micro">N° do computador
-                <input type="text" name="micro" required>
+                <input type="text" name="micro" maxlength="2" >
             </label>
     
             <label for="problem">O que está acontecendo? <br>
@@ -55,31 +60,6 @@
       </a>
     </section> 
 
-
-  <!-- Div responsável por apresentar ao usuário chamados abertos nesse laboratório -->
-
-    <div id="tabela">
-      <table style="width: 100%;">
-        <h1 style="text-align: center;margin-bottom:15px">Chamados Ativos no {{ chamado.laboratorio }} </h1>
-          <tr>
-              <th>N° Laboratório</th>
-              <th>N° Micro</th>
-              <th>Reportado</th>
-          </tr>
-          {% for chamados in chamados_abertos %}
-            {% if chamado.laboratorio == chamados.laboratorio%}
-                <tr class="chamado">
-                    <td>{{ chamados.laboratorio[12:15]}}</td>
-                    <td>{{ chamados.micro }}</td>
-                    <td>{{ chamados.problema }}</td>
-                
-                </tr>
-
-
-              {% endif %}
-
-          {%endfor%}
-         
          
         </table>
       </div>

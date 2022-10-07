@@ -1,15 +1,3 @@
-
-div#done{
-  margin-top: 100px;
-  margin: auto;
-  text-align: center;
-  width:300px;
-  height:300px;
-  border:solid 1px;
-  border-radius:0px 20px 0px 20px;
-  border-color: rgb(49, 181, 204);
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -50,9 +38,9 @@ section#capa img {
 
 section#capa img:hover {
   scale: 1.2;
-  transition: 250ms;
-  transition-delay: 10ms;
   transition-timing-function: ease-in;
+  transition-delay: 250ms;
+  transition-duration: 500ms;
 }
 
 section#buttons {
@@ -109,6 +97,28 @@ th,
 td {
   border: 1px solid black;
 }
+div#layout img {
+  display: inline-block;
+  width: 500px;
+  height: 350px;
+  border-radius: 5px;
+}
+
+#layout-lab{
+  margin-top: 5px;
+}
+
+
+div#done{
+  margin-top: 100px;
+  margin: auto;
+  text-align: center;
+  width:300px;
+  height:300px;
+  border:solid 1px;
+  border-radius:0px 20px 0px 20px;
+  border-color: rgb(49, 181, 204);
+}
 
 #formulario_final {
   display: inline-block;
@@ -157,10 +167,4 @@ div#layout {
   background-color: rgb(32, 112, 112);
   width: fit-content;
   margin: auto;
-}
-div#layout img {
-  display: inline-block;
-  width: 500px;
-  height: 350px;
-  border-radius: 5px;
 }
