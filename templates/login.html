@@ -1,0 +1,15 @@
+{% extends "style.html" %} {% block head %} {{ super() }}
+
+    <form action="" method="post">
+        <input type="text" placeholder="login" name="login" value="{{
+          request.form.login }}">
+         <input type="senha" placeholder="senha" name="senha" value="{{
+          request.form.senha}}">
+        <input class="btn btn-default" type="submit" value="Login">
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+
+
+{% endblock %}
