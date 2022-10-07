@@ -14,7 +14,7 @@
   <!-- Div responsável por apresentar ao usuário o LAYOUT do laboratório escolhido -->
   <div id="layout">
       <section id="layout-image">
-        {% if (laboratorio[12] == '4') %}
+        {% if (laboratorio[12] == '4' and laboratorio[13:15] != '01' and laboratorio[13:15] != '02') %}
         <img id="layout-lab"
         src="{{url_for('static', filename='412'+'.png' )}}"
         alt=""/> 

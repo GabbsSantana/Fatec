@@ -4,9 +4,8 @@ CREATE TABLE chamados (
   laboratorio TEXT,
   micro INTEGER,
   problema TEXT,
-  FOREIGN KEY (id) REFERENCES user (id)
+  FOREIGN KEY (id) REFERENCES alunos (id)
 );
-
 DROP TABLE IF EXISTS alunos;
 CREATE TABLE alunos (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
