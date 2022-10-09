@@ -22,6 +22,23 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 *A imagem abaixo mostra como foi o andamento do Burndown [__Burndown__]()
 
 ## 🎥 DEMONSTRAÇÂO 
-![WhatsApp Video 2022-09-20 at 14 15 10](https://user-images.githubusercontent.com/112488445/194549152-bb64cb1d-6b46-4977-b594-d74613dc51c0.gif)
+Execução do chamado:     
 
-https://youtu.be/8Dw9KQb7sTA
+
+
+
+![WhatsApp Video 2022-10-09 at 18 43 11](https://user-images.githubusercontent.com/112488445/194781672-c6f85d5c-3354-4665-8083-80a71e8f2d7b.gif)
+
+
+
+
+
+
+Consulta de chamado:        
+
+
+
+
+
+![WhatsApp Video 2022-10-09 at 19 22 22 (1) (1)](https://user-images.githubusercontent.com/112488445/194782227-a5dfd61c-3760-43ca-8f6a-9e97b29de691.gif)
+
