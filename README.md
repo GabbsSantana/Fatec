@@ -16,31 +16,18 @@ Desenvolver um sistema web para controle de ordem de serviços (SOS) automatizar
 A metodologia abordada durante o projeto foi a Scrum, considerada um método ágil. Trata-se de um framework (conjunto de ações e estratégias para solucionar problemas de uma atividade complexa) para mais informações acesse o vídeo [Metodologia Scrum](https://www.youtube.com/watch?v=XfvQWnRgxG0&t=130s).
 
 ## 📒 BACKLOG
-![image](https://user-images.githubusercontent.com/112169707/190917770-974a8f49-8b7a-4c2c-9f62-7ac0643702d0.png)
+![image](https://user-images.githubusercontent.com/53665466/194786766-e119efda-f1e3-44f7-869c-ba9cdb18a209.png)
+
 
 ## 📈 BURNDOWN
-*A imagem abaixo mostra como foi o andamento do Burndown [__Burndown__]()
 ![image](https://user-images.githubusercontent.com/53665466/194783995-43a0de30-ae82-4905-a254-757de5d05e13.png)
 
 
-## 🎥 DEMONSTRAÇÂO 
-Execução do chamado:     
-
-
-
-
+## 🎥 DEMONSTRAÇÂO ![backlog]
+### Execução do chamado:     
 ![WhatsApp Video 2022-10-09 at 18 43 11](https://user-images.githubusercontent.com/112488445/194781672-c6f85d5c-3354-4665-8083-80a71e8f2d7b.gif)
 
 
-
-
-
-
-Consulta de chamado:        
-
-
-
-
-
+### Consulta de chamado:        
 ![WhatsApp Video 2022-10-09 at 19 22 22 (1) (1)](https://user-images.githubusercontent.com/112488445/194782227-a5dfd61c-3760-43ca-8f6a-9e97b29de691.gif)
 
