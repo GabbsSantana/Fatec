@@ -7,10 +7,10 @@ Desenvolver um sistema web para controle de ordem de serviços (SOS) automatizar
 ## ♻️🔃 METODOLOGIA
 A metodologia abordada durante o projeto foi a Scrum, considerada um método ágil. Trata-se de um framework (conjunto de ações e estratégias para solucionar problemas de uma atividade complexa) para mais informações acesse o vídeo [Metodologia Scrum](https://www.youtube.com/watch?v=XfvQWnRgxG0&t=130s).
 
-## 💡 SOLUÇÃO
-(nome do site) possibilita a interação entre o usuário com a máquina, que será feita a através de uma chamada indicando a sala/laboratório da mesma e uma pequena descrição a respeito do problema. Feita a chamada a equipe de suporte da Fatec poderá acessar o site e tomar conhecimento do problema relatado.
 
-## 📖 CONHECIMENTO NECESSÁIO 
+## 📖 TECNOLOGIAS UTILIZADAS
+![tech](https://user-images.githubusercontent.com/53665466/194787147-142ddb52-65fd-4c1c-a17e-53509d156000.png)
+
 
 
 ## 📒 BACKLOG
@@ -28,4 +28,3 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 
 ### Consulta de chamado:        
 ![WhatsApp Video 2022-10-09 at 19 22 22 (1) (1)](https://user-images.githubusercontent.com/112488445/194782227-a5dfd61c-3760-43ca-8f6a-9e97b29de691.gif)
-
