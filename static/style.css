@@ -4,20 +4,53 @@
   padding: 0;
   max-width: 100vw;
   max-height: 100vh;
+  background-color: var(--base-color-gray-alt);
+  color: var(--base-color-text);
+}
+:root{
+--base-color-gray:(#cec7b6);
+--base-color-text:(#190a12);
+--brown-color:(#5a5239);
+--base-color-hover:(#b3c9c1);
+--base-color-gray-alt:(#eee9c7);
+
+ /* fonts */
+ --title-font-size:3rem;
+ --subtitle-font-size: 1.5rem;
+
+ --title-font: 'Poppins', sans-serif;
+ --body-font: 'DM Sans', sans-serif;
+}
+h1,h2,h3{
+  font-size: var(--title-font-size);
+  color: var(--base-color-text);
+  font-family: var(--title-font);
+}
+p,a{
+  font-size: var(--subtitle-font-size);
+  font-family: var(--title-font);
+  color: var(--base-color-text);
+}
+header{
+ display: flex;
+
 }
 header img#logo {
-  width: 5%;
-  display: inline;
-  position: absolute;
-  left: 5px;
-  top: 5px;
+ width: 10%;
+ height: 10%;
+ top: 15px;
+ left: 15px;
+ position: absolute;
 }
 
 h1 {
   margin: 25px auto;
-  display: block;
   text-align: center;
-  font-size: 30px;
+}
+
+.jumbotron-small{
+  background-color:rgb(32, 112, 112) ;
+  color: #b3c9c1;
 }
 
 section#capa {
@@ -49,6 +82,7 @@ section#buttons {
 
 a {
   text-decoration: none;
+  font-family: var(--body-font);
 }
 .btn {
   width: 200px;
@@ -127,28 +161,51 @@ div#done{
 }
 
 #formulario_final label {
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
   color: white;
   margin-bottom: 10px;
   margin-top: 10px;
+  font-family: var(--title-font);
+  font-weight: 700;
 }
 #formulario_final input {
   display: block;
   margin: auto;
   border-radius: 10px;
-  border-color: transparent;
+  border-color: white;
   margin-top: 5px;
   text-align: center;
   width: 250px;
-}
-#formulario_final input[value] {
   color: white;
+}
+#formulario_final input[value]  {
   text-align: center;
+  font-size: 13px;
+  font-weight: 200;
 }
 #formulario_final input:focus {
-  color: black;
   text-align: center;
+  border-color: white;
+  font-size: 13px;
+  font-weight: 200;
+
+}
+
+#formulario_final textarea{
+  text-align: center;
+  border-color: white;
+}
+/* Cor de Background do autocomplete */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px rgb(32, 112, 112) inset;
+}
+
+/* Cor do texto do autocomplete */
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+  font-size: 13px;
+  font-weight: 200;
 }
 
 div#tabela {
