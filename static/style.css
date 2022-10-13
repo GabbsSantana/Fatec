@@ -69,13 +69,6 @@ section#capa img {
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-section#capa img:hover {
-  scale: 1.2;
-  transition-timing-function: ease-in;
-  transition-delay: 250ms;
-  transition-duration: 500ms;
-}
-
 section#buttons {
   text-align: center;
 }
@@ -83,17 +76,18 @@ section#buttons {
 a {
   text-decoration: none;
   font-family: var(--body-font);
+  
 }
-.btn {
+.button {
   width: 200px;
-  height: 25px;
-
+  height: 30px;
+  
   background-color: black;
   color: white;
   border-radius: 15px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
-.btn:hover {
+.button:hover {
   background-color: rgb(49, 181, 204);
   border: antiquewhite;
   color: black;
@@ -137,10 +131,36 @@ div#layout img {
   height: 350px;
   border-radius: 5px;
 }
+div#layout textarea{
+  resize: none;
+}
 
 #layout-lab{
   margin-top: 5px;
 }
+
+#abrir_chamado{
+    height: 26px;
+    background-color: black;
+    color: white;
+    margin-top: 50px;
+    border: black;
+}
+  #abrir_chamado:hover {
+    background-color: rgb(49, 181, 204);
+    color: black;
+    transition: 150ms;
+    transition-delay: 10ms;
+    transition-timing-function: ease-in;
+    cursor: pointer;
+  }
+
+  span{
+    background-color: rgb(32, 112, 112);
+    color: white;
+    border-radius: 10px;
+  }
+
 
 
 div#done{
