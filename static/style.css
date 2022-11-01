@@ -67,6 +67,7 @@ section#capa img {
   border-radius: 2.5%;
   margin: 2%;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
 }
 
 section#buttons {
@@ -127,9 +128,9 @@ td {
 }
 div#layout img {
   display: inline-block;
-  width: 500px;
+  margin:0;
   height: 350px;
-  border-radius: 5px;
+  
 }
 div#layout textarea{
   resize: none;
@@ -179,9 +180,10 @@ div#done{
 
 #formulario_final {
   display: inline-block;
-  width: 500px;
+  width: 350px;
   height: 350px;
-  background-color: rgb(32, 112, 112);;
+  background-color: rgb(32, 112, 112);
+  position: relative;
 }
 
 #formulario_final label {
@@ -192,7 +194,7 @@ div#done{
   margin-top: 10px;
   font-family: var(--title-font);
   font-weight: 700;
-  background-color: rgb(32, 112, 112);;
+  background-color: rgb(32, 112, 112);
 
   
 }
