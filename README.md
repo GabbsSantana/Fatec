@@ -1,5 +1,9 @@
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+
 # 🎓📘 Aprendizado por Projeto Integrador
 * FATEC São José dos Campos - Prof. Jessen Vidal
+
+
 
 ## 🎯 DESAFIO
 Desenvolver um sistema web para controle de ordem de serviços (SOS) automatizar o processo de informação de equipamentos com mau funcionamento (Hardware e Software), onde haverá um mapa de localização (Layout) e uma legenda com possíveis defeitos. Os desenvolvedores deverão através da experiência adquirida sinalizar esses defeitos e sugerir ao cliente possibilidades visuais dessas indicações. Haverá a possibilidade de mudanças de layout, nomenclatura do computador, características do hardware e software e situações similares são funcionalidades que deverão ser contemplados no sistema. Bem como toda a documentação de desenvolvimento deverá ser lastreado no GitHub com todos os processos necessários para a fidelização do cliente.
