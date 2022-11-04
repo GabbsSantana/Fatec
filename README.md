@@ -10,9 +10,9 @@
 
 
   <tr>
-    <td align="center"><a href="https://github.com/itsmorais"><img style="border-radius: 50%;" src="https://user-images.githubusercontent.com/112488445/199853994-19d9594f-77fa-4b16-b5a6-e340643b59a3.jpeg" width="125px;" alt=""/><br /><sub><b>Michael Morais</b></sub></a><br /><a title="Rocketseat">S.M</a></td>
-    <td align="center"><a href="https://github.com/Ianportods"><img style="border-radius: 50%;" src="https://user-images.githubusercontent.com/112488445/199854486-20da8bf4-cf74-4836-96f8-12a9ce155f9c.jpg" width="125px;" alt=""/><br /><sub><b>Ian Porto Dias</b></sub></a><br /><a title="Rocketseat">P.O</a></td>
-    <td align="center"><a href="https://github.com/GabbsSantana"><img style="border-radius: 50%;" src="https://user-images.githubusercontent.com/112488445/199855402-a5dda8d0-dadb-4b86-bb11-0f825572f14d.jpeg" width="125px;" alt=""/><br /><sub><b>Gabriel Cruz de Santana</b></sub></a><br /><a  title="Função"></a></td>
+    <td align="center"><a href="https://github.com/itsmorais"><img style="border-radius: 50%;" src="https://user-images.githubusercontent.com/112488445/199853994-19d9594f-77fa-4b16-b5a6-e340643b59a3.jpeg" width="125px;" alt=""/><br /><sub><b>Michael Morais</b></sub></a><br /><a title="Rocketseat">SM</a></td>
+    <td align="center"><a href="https://github.com/Ianportods"><img style="border-radius: 50%;" src="https://user-images.githubusercontent.com/112488445/199854486-20da8bf4-cf74-4836-96f8-12a9ce155f9c.jpg" width="125px;" alt=""/><br /><sub><b>Ian Porto Dias</b></sub></a><br /><a title="Rocketseat">PO</a></td>
+    <td align="center"><a href="https://github.com/GabbsSantana"><img style="border-radius: 50%;" src="https://user-images.githubusercontent.com/112488445/199855402-a5dda8d0-dadb-4b86-bb11-0f825572f14d.jpeg" width="125px;" alt=""/><br /><sub><b>Gabriel Cruz de Santana</b></sub></a><br /><a  title="Função">DEV</a></td>
    
 </table>
 
