@@ -14,20 +14,14 @@
   <!-- Div responsável por apresentar ao usuário o LAYOUT do laboratório escolhido -->
   <div id="layout">
       <section id="layout-image">
-        {% if (laboratorio[12] == '4' and laboratorio[13:15] != '01' and laboratorio[13:15] != '02' or '303' in laboratorio[12:]) %}
-        <img id="layout-lab"
-        src="{{url_for('static', filename='3x3'+'.png' )}}"
-        alt=""/> 
-        {%  elif ('301' in laboratorio[12:] or '302' in laboratorio[12:] or '401'  in laboratorio[12:])%}
-        <img id="layout-lab"
-        src="{{url_for('static', filename='4x3'+'.png' )}}"
-        alt=""/> 
-        {%  elif ('402' in laboratorio[12:])%}
-        <img id="layout-lab"
-        src="{{url_for('static', filename='4x4'+'.png' )}}"
-        alt=""/> 
-      
-        {% endif %}
+        {% for imagem in layout %}
+          {%  if ( laboratorio in imagem)%}
+          <img id="layout-lab"
+          src="{{url_for('static', filename=imagem[1]+'.png' )}}"
+          alt=""/> 
+        
+          {% endif %}
+        {% endfor %}
       </section>
 
   <!-- Formulário responsável por receber dados do usuário refente a abertura do chamado -->

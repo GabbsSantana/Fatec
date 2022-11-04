@@ -1,12 +1,19 @@
 DROP TABLE IF EXISTS chamados;
-CREATE TABLE chamados (
+CREATE TABLE chamados(
   id INTEGER PRIMARY KEY AUTOINCREMENT,
+  micro INTEGER NOT NULL,
   laboratorio TEXT NOT NULL,
-  FOREIGN KEY (id) REFERENCES user (id)
+  CONSTRAINT fk_alunos FOREIGN KEY (alunos_id) REFERENCES alunos(alunos_id)
 );
+DROP TABLE IF EXISTS laboratorio;
+CREATE TABLE layout(
+  laboratorio_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  laboratorio_nome TEXT NOT NULL,
+  layout TEXT NOT NULL
+);
+DROP TABLE IF EXISTS alunos;
 CREATE TABLE alunos (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  aluno_id INTEGER PRIMARY KEY AUTOINCREMENT,
   nome TEXT NOT NULL,
-  email TEXT NOT NULL,
-  FOREIGN KEY (id) REFERENCES user (id),
+  email TEXT NOT NULL
 );

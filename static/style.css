@@ -22,9 +22,12 @@
  --body-font: 'DM Sans', sans-serif;
 }
 h1,h2,h3{
-  font-size: var(--title-font-size);
   color: var(--base-color-text);
   font-family: var(--title-font);
+}
+h1,h2{
+  font-size: var(--title-font-size);
+
 }
 p,a{
   font-size: var(--subtitle-font-size);
@@ -270,4 +273,56 @@ div#layout {
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(214, 81, 81);
+  
+}
+
+div#update_layout{
+  display: flex;
+ justify-content: center;
+ 
+
+}
+img#update-lab{
+  height: 200px;
+  width: 350px;
+  display: inline;
+  margin: 0;
+  padding: 0;
+ 
+}
+section#update-image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  
+  
+
+}
+label.update_label{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+section#update-image input{
+  display: inline;
+  width: 20px;
+  
+}
+div#label_input{
+  display: flex;
+  gap: 25px;
+}
+
+section#update_labs{
+text-align: center;
+}
+
+div#btn_update{
+  display: block;
+  padding-top: 25px;
+ 
+  text-align: center;
 }

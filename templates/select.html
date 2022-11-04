@@ -8,7 +8,7 @@
 
     <!-- Opções de laboratórios para a seleção do usuário -->
 
-    <select name="laboratorios" id="laboratorios">
+    <select name="laboratorios" id="laboratorios" onchange="novo_lab()">
       <optgroup label="3° Andar">
         <option value="Laboratório 301">Laboratório 301</option>
         <option value="Laboratório 302">Laboratório 302</option>
@@ -33,10 +33,23 @@
   </section>
 </form>
 
-<section id="buttons">
-  <a href="{{url_for('home')}}">
-    <button class="button" href="home.html">Voltar</button>
-  </a>
-</section>
+<div id="layout">
+  <section id="layout-image">
+    {% for imagem in layout %} {% if ( laboratorio in imagem)%}
+    <img
+      id="layout-lab"
+      src="{{url_for('static', filename=imagem[1]+'.png' )}}"
+      alt=""
+    />
 
-{% endblock %} {% endblock %}
+    {% endif %} {% endfor %}
+  </section>
+
+  <section id="buttons">
+    <a href="{{url_for('home')}}">
+      <button class="button" href="home.html">Voltar</button>
+    </a>
+  </section>
+
+  {% endblock %} {% endblock %}
+</div>

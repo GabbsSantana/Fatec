@@ -9,10 +9,21 @@ class LaboratorioAtual:
 
 laboratorio_atual = LaboratorioAtual()
 
+
 def openDB():
   connection = sqlite3.connect('database.db')
-  cur = connection.cursor()
-  return cur,connection
+  cur = connection.cursor()  
+  return cur,connection 
+
+cur,conn = openDB()
+cur.execute('select laboratorio_nome,layout from layout')
+layoutLab = cur.fetchall()
+for x in layoutLab:
+  if 'Laboratório 404' in x:
+    print('achei')
+
+
+
 
 # Inicializando o app FLASK
 app = Flask(__name__)
@@ -64,11 +75,11 @@ def layout():
     conn.commit()
 
     conn.close()
-
+    
     # Redirecionando para página DONE
     return redirect(url_for('done'))
 
-  return render_template('layout.html',laboratorio=laboratorio_atual.laboratorio)
+  return render_template('layout.html',laboratorio=laboratorio_atual.laboratorio,layout=layoutLab)
 
 # Rota para página Done
 # Rota responsável por apresentar ao usuário a conclusão do chamado e os dados sobre
@@ -117,7 +128,23 @@ def login():
         if request.form['login'] != 'admin' or request.form['senha'] != 'admin':
             error = 'Credencial invalida'
         else:
-            return redirect(url_for('all'))
+            return redirect(url_for('admin'))
     return render_template('login.html', error=error)
 
+@app.route('/update',methods=['GET','POST'])
+def update():
+  message = None
+  cur,con = openDB()
+  if request.method == 'POST':
+    lab = request.form['laboratorios']
+    imagem = request.form['imagem']
+    cur.execute('UPDATE layout SET layout = ? WHERE laboratorio_nome == ?',(imagem,lab))
+    con.commit()
+    message = 'Layout Alterado com Sucesso'
+  
+  return render_template('update.html',layout=layoutLab,message=message)
+
+@app.route('/admin')
+def admin():
+  return render_template('admin.html')
 app.run(debug=True)
