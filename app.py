@@ -9,20 +9,16 @@ class LaboratorioAtual:
 
 laboratorio_atual = LaboratorioAtual()
 
-
+# Função responsável por retornar o Cursos e Conector do banco de dados
 def openDB():
   connection = sqlite3.connect('database.db')
   cur = connection.cursor()  
   return cur,connection 
 
+# Inicializando variável com os layouts vinculados aos Laboratórios
 cur,conn = openDB()
 cur.execute('select laboratorio_nome,layout from layout')
 layoutLab = cur.fetchall()
-for x in layoutLab:
-  if 'Laboratório 404' in x:
-    print('achei')
-
-
 
 
 # Inicializando o app FLASK
@@ -42,7 +38,6 @@ def select():
   openDB()
   if request.method == 'POST':
     lab = request.form['laboratorios']
-
     if not lab:
       flash('Escolha um laboratório')
     else:
@@ -106,21 +101,7 @@ def done():
   conn.close()
   return render_template('done.html', data=alunoDB,laboratorio=lab)
 
-# Rota para página all
-# Rota responsável por apresentar ao usuário todos os chamados abertos no sistema
-@app.route('/all/')
-def all():
-  cur,conn = openDB()
-  cur.execute('select nome,email from alunos')
-  alunoDB = cur.fetchall()
-  
-   # Pegando dados sobre laboratório  
-  cur.execute("SELECT laboratorio,micro,problema FROM chamados")
-  lab = cur.fetchall()
-  
-  conn.close()
-  return render_template('all.html',alunos=alunoDB,chamado=lab)
-
+# Rota para Login do administrador
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
@@ -131,19 +112,41 @@ def login():
             return redirect(url_for('admin'))
     return render_template('login.html', error=error)
 
+
+
+# Rota para página all
+# Rota responsável por apresentar ao administrador todos os chamados abertos no sistema
+@app.route('/all/')
+def all():
+  cur,conn = openDB()
+  cur.execute('select nome,email from alunos')
+  alunoDB = cur.fetchall()
+  
+   #Pegando dados sobre laboratório  
+  cur.execute("SELECT laboratorio,micro,problema FROM chamados")
+  lab = cur.fetchall()
+  
+  conn.close()
+  return render_template('all.html',alunos=alunoDB,chamado=lab)
+
+
+# Rota responsável por editar layout de uma Laboratório
+# Disponível apenas para o administrador
 @app.route('/update',methods=['GET','POST'])
 def update():
-  message = None
   cur,con = openDB()
   if request.method == 'POST':
     lab = request.form['laboratorios']
     imagem = request.form['imagem']
+    print(lab,imagem)
     cur.execute('UPDATE layout SET layout = ? WHERE laboratorio_nome == ?',(imagem,lab))
     con.commit()
-    message = 'Layout Alterado com Sucesso'
+    con.close()
+    return redirect(url_for('admin'))
   
-  return render_template('update.html',layout=layoutLab,message=message)
+  return render_template('update.html',layout=layoutLab)
 
+# Rota que apresenta o Painel de controle do Administrador
 @app.route('/admin')
 def admin():
   return render_template('admin.html')

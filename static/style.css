@@ -276,6 +276,25 @@ div#layout {
   
 }
 
+section#update_labs{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+
+#update_labs select{
+  width: 350px;
+  height: 50px;
+  font-weight: 700;
+  border: 1.5px solid black;
+}
+#update_labs .select_opt{
+  font-weight: 700;
+  color: #190a12;
+}
+
 div#update_layout{
   display: flex;
  justify-content: center;
@@ -283,20 +302,18 @@ div#update_layout{
 
 }
 img#update-lab{
-  height: 200px;
-  width: 350px;
+  
   display: inline;
   margin: 0;
   padding: 0;
+  width: 50rem;
  
 }
 section#update-image{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
-  
-  
+  width:50rem;
 
 }
 label.update_label{
@@ -322,7 +339,89 @@ text-align: center;
 
 div#btn_update{
   display: block;
-  padding-top: 25px;
  
   text-align: center;
 }
+
+form.update{
+  background-color: transparent;
+}
+
+
+/* =========================== TESTE SWIPER SLIDES UPDATE ======================================*/
+#testimonials {
+  background: #eee9c7;
+  width: fit-content;
+  padding: 0;
+}
+
+h2#depo.title {
+  padding: 0 1.5rem;
+}
+#testimonials .container {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#testimonials blockquote {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 0.25rem;
+  border-color: transparent;
+}
+#testimonials blockquote p {
+  position: relative;
+  text-indent: 1.875rem;
+}
+#testimonials blockquote p span {
+  font: 700 2.5rem serif;
+
+  position: absolute;
+  top: -0.5rem;
+  left: -1.875rem;
+}
+/*Caixa contendo imagem e texto*/
+
+
+/*=================== SWIPER ==========*/
+.swiper-slide {
+  height: auto;
+  width: fit-content;
+  padding: 4rem 4rem;
+}
+.swiper-pagination-bullet {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+
+#testimonials > div > div > div.swiper-button-prev,
+#testimonials > div > div > div.swiper-button-next {
+  color: #190a12;
+}
+div.testimonial.swiper-slide.swiper-slide {
+  padding-top: 1rem;
+}
+h2#depo.title {
+  margin: 0, 0, 0, 0;}
+
+  .container {
+    width: 70rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.section header,
+  #testimonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container p{
+    font-size: 20px;
+  }
+ 

@@ -1,82 +1,136 @@
 {% extends "style.html" %} {% block head %} {{ super() }}
+ <!-- SWIPER -->
+ <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+
+
 
 <form method="post" class="update">
   <section id="update_labs">
-    <h1>Mudar Layout do Laboratório</h1>
-    <h3>Selecione o Laboratório</h3>
 
+    <div id="select_label">
+<h3>Selecione o laboratório</h3>
     <!-- Opções de laboratórios para a seleção do usuário -->
+    <select name="laboratorios" id="laboratorios" >
 
-    <select name="laboratorios" id="laboratorios" onchange="novo_lab()">
       <optgroup label="3° Andar">
-        <option value="Laboratório 301">Laboratório 301</option>
-        <option value="Laboratório 302">Laboratório 302</option>
-        <option value="Laboratório 303">Laboratório 303</option>
+        <option class="select_opt" value="Laboratório 301">Laboratório 301</option>
+        <option class="select_opt" value="Laboratório 302">Laboratório 302</option>
+        <option class="select_opt" value="Laboratório 303">Laboratório 303</option>
       </optgroup>
       <optgroup label="4° Andar">
-        <option value="Laboratório 401">Laboratório 401</option>
-        <option value="Laboratório 402">Laboratório 402</option>
-        <option value="Laboratório 404">Laboratório 404</option>
-        <option value="Laboratório 405">Laboratório 405</option>
-        <option value="Laboratório 406">Laboratório 406</option>
-        <option value="Laboratório 407">Laboratório 407</option>
-        <option value="Laboratório 408">Laboratório 408</option>
-        <option value="Laboratório 409">Laboratório 409</option>
-        <option value="Laboratório 411">Laboratório 411</option>
-        <option value="Laboratório 412">Laboratório 412</option>
+        <option class="select_opt" value="Laboratório 401">Laboratório 401</option>
+        <option class="select_opt" value="Laboratório 402">Laboratório 402</option>
+        <option class="select_opt" value="Laboratório 404">Laboratório 404</option>
+        <option class="select_opt" value="Laboratório 405">Laboratório 405</option>
+        <option class="select_opt" value="Laboratório 406">Laboratório 406</option>
+        <option class="select_opt" value="Laboratório 407">Laboratório 407</option>
+        <option class="select_opt" value="Laboratório 408">Laboratório 408</option>
+        <option class="select_opt" value="Laboratório 409">Laboratório 409</option>
+        <option class="select_opt" value="Laboratório 411">Laboratório 411</option>
+        <option class="select_opt" value="Laboratório 412">Laboratório 412</option>
       </optgroup>
     </select>
-    <br /><br />
-    <br />
-  </section>
+  
+  </div>
  
 
+  <section class="section" id="testimonials">
+    <!--DESABILITAR CONTAINER GRID-->
+    <div class="container">
+      <header>
+        <h2 class="title" id="depo">Selecione o Layout</h2>
+      </header>
+      <div class="testimonials swiper">
+        <div class="swiper-wrapper">
+          
+            <div class="testimonial swiper-slide">
+              <blockquote>
+                <p>
+                  Layout A
+                  <input type="radio" name="imagem"value="3x3" checked />
+                </p>
+                <img
+                id="update-lab"
+                src="{{url_for('static', filename='3x3' +'.png' )}}"
+                  >
+              </blockquote>
+            </div>
+            <div class="testimonial swiper-slide">
+              <blockquote>
+                <p>
+                  Layout B
+                  <input type="radio" name="imagem"value="4x3" />
+                </p>
+                <img
+                id="update-lab"
+                src="{{url_for('static', filename='4x3' +'.png' )}}"
+                  >
+              </blockquote>
+            </div>
+            <div class="testimonial swiper-slide">
+              <blockquote>
+                <p>
+                  Layout C
+                  <input type="radio" name="imagem"value="4x4" />
+                </p>
+                <img
+                id="update-lab"
+                src="{{url_for('static', filename='4x4' +'.png' )}}"
+                  >
+              </blockquote>
+            </div>
 
-<div id="update_layout">
-  <section id="update-image">
-    <div id="label_input">
-    <label for="imagem"  class="update_label"> Layout Laboratório A</label>
-    <input type="radio" name="imagem"value="3x3" checked />
-  </div>
-
-    <img
-      id="update-lab"
-      src="{{url_for('static', filename='3x3' +'.png' )}}"
-      alt=""
-      
-    />   </section>
-
-
-    <section id="update-image">
-      <div id="label_input"> <label for="imagem" class="update_label"> Layout Laboratório B</label>
-      <input type="radio" name="imagem"value="4x3" />
-     </div>
-      <img
-        id="update-lab"
-        src="{{url_for('static', filename='4x3' +'.png' )}}"
-        alt=""
-      />
-    </section>
-    <section id="update-image">
-      <div id="label_input">
-      <label for="imagem" class="update_label"> Layout Laboratório C</label>
-
-      <input type="radio" name="imagem"value="4x4" /></div>
-
-      <img
-        id="update-lab"
-        src="{{url_for('static', filename='4x4' +'.png' )}}"
-        alt=""
-      /></div>
-
+            
+          
+        </div>
+           <!-- If we need navigation buttons -->
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+       
+  </section>
+</section>
     </section>
 <div id="btn_update">
-    <input type="submit" value="Alterar Layout" class="button" /></div>
+    <input type="submit" value="Alterar Layout" class="button" onclick="alert('Layout alterado com sucesso!')"/></div>
   </form>
 
-  {% if message %}
-  <p class="error">Layout alterado com sucesso!</p>
-  {% endif %}
+
+ 
+  <script>
+    /** TESTIMONIALS Caroulsel,Slider */
+    const swiper = new Swiper('.swiper', {
+  breakpoints: {
+    375: {
+      setWrapperSize: true,
+      mousewheel: false,
+      slidesPerView: 1,
+      pagination: {
+        el: '.swiper-pagination'
+      }
+    },
+    1000: {
+      slidesPerView: 1,
+      setWrapperSize: true,
+      mousewheel: false,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      }
+    }
+  }
+  })
   
+  if (window.innerWidth < 1000) {
+  let paginationPrev = document.querySelector('.swiper-button-prev')
+  let paginationNext = document.querySelector('.swiper-button-next')
+  paginationNext.parentNode.removeChild(paginationNext)
+  paginationPrev.parentNode.removeChild(paginationPrev)
+  }
+   
+  </script>
+ 
   {% endblock %}
 
