@@ -1,7 +1,14 @@
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
-# 🎓📘 Aprendizado por Projeto Integrador
-* FATEC São José dos Campos - Prof. Jessen Vidal
+
+### Aprendizado por Projeto Integrador - FATEC São José dos Campos - Prof. Jessen Vidal
+
+# Grupo MIG <a href="" target="_blank"><img src="https://img.shields.io/badge/status-em%20desenvolvimento-yellow"></a>
+
+
+<div align="center"><img src="https://user-images.githubusercontent.com/53665466/200074701-d2e1f138-f30e-42d2-94f7-9f9211c5f206.png"> </div>
+
+
+
 
 ## 🎯 DESAFIO
 Desenvolver um sistema web para controle de ordem de serviços (SOS) automatizar o processo de informação de equipamentos com mau funcionamento (Hardware e Software), onde haverá um mapa de localização (Layout) e uma legenda com possíveis defeitos. Os desenvolvedores deverão através da experiência adquirida sinalizar esses defeitos e sugerir ao cliente possibilidades visuais dessas indicações. Haverá a possibilidade de mudanças de layout, nomenclatura do computador, características do hardware e software e situações similares são funcionalidades que deverão ser contemplados no sistema. Bem como toda a documentação de desenvolvimento deverá ser lastreado no GitHub com todos os processos necessários para a fidelização do cliente.
@@ -34,9 +41,6 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
     <td align="center"><a href="https://github.com/GabbsSantana"><img style="border-radius: 50%;" src="https://user-images.githubusercontent.com/112488445/199855402-a5dda8d0-dadb-4b86-bb11-0f825572f14d.jpeg" width="125px;" alt=""/><br /><sub><b>Gabriel Cruz de Santana</b></sub></a><br /><a  title="Função">DEV</a></td>
    
 </table>
-
-## LOGO DO TIME 🚂
-![image](https://user-images.githubusercontent.com/53665466/200074701-d2e1f138-f30e-42d2-94f7-9f9211c5f206.png)
 
 
 ## 🎥 DEMONSTRAÇÂO
