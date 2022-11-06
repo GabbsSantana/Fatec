@@ -451,4 +451,32 @@ h2#depo.title {
   .container p{
     font-size: 20px;
   }
- 
+.tabelas{
+  width: 100%;
+  background-color: #34343618;
+}
+.tabelas td  {
+  border:none;
+  padding: 8px;
+  background-color: #34343618;
+}
+.tabelas th {
+  border:none;
+  text-align: center;
+  padding: 8px;
+  background-color: #34343618;
+}
+.tabelas tr:hover{
+    background:#34343618;
+    color:rgb(0, 0, 0);
+}
+.tabelas thread{
+  color:rgb(0, 0, 0);
+  font-weight:bold;
+  background-color: #34343618;
+}
+.tabelas thread:hover{
+  color:rgb(0, 0, 0);
+  font-weight:bold;
+  background-color: #34343618;
+}
