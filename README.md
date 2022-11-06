@@ -18,16 +18,27 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 
 
 ## 📖 TECNOLOGIAS UTILIZADAS
+
+### HTML | CSS | PYTHON | FLASK | SQLITE | BOOTSTRAP
+
 ![tech](https://user-images.githubusercontent.com/53665466/194787147-142ddb52-65fd-4c1c-a17e-53509d156000.png)
 
 
 
 ## 📒 BACKLOG
-![image](https://user-images.githubusercontent.com/53665466/194786766-e119efda-f1e3-44f7-869c-ba9cdb18a209.png)
+![image](https://user-images.githubusercontent.com/53665466/200192935-3cc4d9aa-55e6-4f74-a6e4-4a88de80ccfc.png)
+
 
 
 ## 📈 BURNDOWN
 ![image](https://user-images.githubusercontent.com/53665466/194783995-43a0de30-ae82-4905-a254-757de5d05e13.png)
+
+| Sprint 1 - Entregue  | Sprint 2 - Entregue | Sprint 3 - Em desenvolvimento | Sprint 4 - Previsão de Entrega |
+| ------------- | ------------- | ------------ | ------------- |
+| Estrutura HTML  | Definir qual banco de dados utilizar  | Estilização CSS | Sugestão de problemas para o usuário  |
+| Flask incluído  | Criar login para admin  | Estilização Bootstrap | Refatorar código  |
+| Mapear 1 laboratório  | Modelagem do banco de dados  | Página para edição de Layout |  Deploy da aplicação |
+| Criar layout de 1 laboratório  | Conexão do SQLITE a aplicação |  |   |
 
 ## 🧑‍🚀EQUIPE
 
