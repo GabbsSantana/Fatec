@@ -1,0 +1,13 @@
+{% extends "style.html" %} {% block head %} {{ super() }}
+
+<h1>Painel Administrativo</h1>
+<section id="buttons">
+  <a href="{{url_for('update')}}">
+    <button class="button" href="./update.html">Alterar Layout</button>
+  </a>
+  <a href="{{url_for('all')}}">
+    <button class="button" href="./all.html">Consultar chamados</button>
+  </a>
+</section>
+
+{% endblock %}

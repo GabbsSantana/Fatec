@@ -4,20 +4,83 @@
   padding: 0;
   max-width: 100vw;
   max-height: 100vh;
+  background-color: #cec7b6;
 }
+:root{
+--base-color-gray:(#cec7b6);
+--base-color-text:(#190a12);
+--brown-color:(#5a5239);
+--base-color-hover:(#b3c9c1);
+--base-color-gray-alt:(#eee9c7);
+
+ /* fonts */
+ --title-font-size:3rem;
+ --subtitle-font-size: 1.5rem;
+
+ --title-font: 'Poppins', sans-serif;
+ --body-font: 'DM Sans', sans-serif;
+}
+h1,h2,h3{
+  color: var(--base-color-text);
+  font-family: var(--title-font);
+}
+h1,h2{
+  font-size: var(--title-font-size);
+
+}
+p,a{
+  font-size: var(--subtitle-font-size);
+  font-family: var(--title-font);
+  color: var(--base-color-text);
+}
+
 header img#logo {
-  width: 5%;
-  display: inline;
-  position: absolute;
-  left: 5px;
-  top: 5px;
+ width: 10%;
+ height: 10%;
+ top: 15px;
+ left: 15px;
+ position: absolute;
 }
 
 h1 {
   margin: 25px auto;
-  display: block;
   text-align: center;
-  font-size: 30px;
+}
+#logo{
+  display: inline;
+  background-color: rgb(32, 112, 112);
+}
+#logo1{
+  display: inline;
+}
+#nav-fatec{
+  margin-left: 10px;
+  display: inline-block;
+  border: 3px solid rgb(32, 112, 112);
+  font-size: 1.5rem;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+  text-transform: uppercase;
+ 
+  background: transparent;
+  position: relative;}
+  
+  #nav-fatec::before {
+      content: '';
+      border: 2px solid rgb(32, 112, 112);
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+      border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+  }
+
+
+.jumbotron-small{
+  background-color:rgb(32, 112, 112) ;
+  color: #b3c9c1;
 }
 
 section#capa {
@@ -34,13 +97,7 @@ section#capa img {
   border-radius: 2.5%;
   margin: 2%;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
 
-section#capa img:hover {
-  scale: 1.2;
-  transition-timing-function: ease-in;
-  transition-delay: 250ms;
-  transition-duration: 500ms;
 }
 
 section#buttons {
@@ -49,17 +106,19 @@ section#buttons {
 
 a {
   text-decoration: none;
+  font-family: var(--body-font);
+  
 }
-.btn {
+.button {
   width: 200px;
-  height: 25px;
-
+  height: 30px;
+  
   background-color: black;
   color: white;
   border-radius: 15px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
-.btn:hover {
+.button:hover {
   background-color: rgb(49, 181, 204);
   border: antiquewhite;
   color: black;
@@ -99,15 +158,44 @@ td {
 }
 div#layout img {
   display: inline-block;
-  width: 500px;
+  margin:0;
   height: 350px;
-  border-radius: 5px;
+  
+}
+div#layout textarea{
+  resize: none;
 }
 
 #layout-lab{
   margin-top: 5px;
+  
 }
 
+#abrir_chamado{
+    height: 26px;
+    background-color: black;
+    color: white;
+    margin-top: 50px;
+    border: black;
+}
+  #abrir_chamado:hover {
+    background-color: rgb(49, 181, 204);
+    color: black;
+    transition: 150ms;
+    transition-delay: 10ms;
+    transition-timing-function: ease-in;
+    cursor: pointer;
+  }
+
+  span{
+    background-color: rgb(32, 112, 112);
+    color: white;
+    border-radius: 10px;
+  }
+
+form{
+  background-color:rgb(32, 112, 112);
+}
 
 div#done{
   margin-top: 100px;
@@ -122,33 +210,67 @@ div#done{
 
 #formulario_final {
   display: inline-block;
-  width: 500px;
+  width: 350px;
   height: 350px;
+  background-color: rgb(32, 112, 112);
+  position: relative;
 }
 
 #formulario_final label {
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
   color: white;
   margin-bottom: 10px;
   margin-top: 10px;
+  font-family: var(--title-font);
+  font-weight: 700;
+  background-color: rgb(32, 112, 112);
+
+  
 }
 #formulario_final input {
   display: block;
   margin: auto;
   border-radius: 10px;
-  border-color: transparent;
+  border-color: white;
   margin-top: 5px;
   text-align: center;
   width: 250px;
+  color: black;
 }
-#formulario_final input[value] {
-  color: white;
+#formulario_final input[value]  {
   text-align: center;
+  font-size: 13px;
+  font-weight: 200;
 }
 #formulario_final input:focus {
-  color: black;
   text-align: center;
+  border-color: white;
+  font-size: 13px;
+  font-weight: 200;
+
+}
+
+#formulario_final textarea{
+  text-align: center;
+  border-color: white;
+  color: #190a12;
+}
+/* Cor de Background do autocomplete */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #cec7b6 inset;
+  color: black;
+
+}
+
+/* Cor do texto do autocomplete */
+input:-webkit-autofill {
+  -webkit-text-fill-color: black !important;
+  font-size: 13px;
+  font-weight: 200;
+}
+input#abrir_chamado{
+  color: white;
 }
 
 div#tabela {
@@ -178,4 +300,183 @@ div#layout {
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(214, 81, 81);
+  
+}
+
+section#update_labs{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+
+#update_labs select{
+  width: 350px;
+  height: 50px;
+  font-weight: 700;
+  border: 1.5px solid black;
+}
+#update_labs .select_opt{
+  font-weight: 700;
+  color: #190a12;
+}
+
+div#update_layout{
+  display: flex;
+ justify-content: center;
+ 
+
+}
+img#update-lab{
+  
+  display: inline;
+  margin: 0;
+  padding: 0;
+  width: 50rem;
+ 
+}
+section#update-image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:50rem;
+
+}
+label.update_label{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+section#update-image input{
+  display: inline;
+  width: 20px;
+  
+}
+div#label_input{
+  display: flex;
+  gap: 25px;
+}
+
+section#update_labs{
+text-align: center;
+}
+
+div#btn_update{
+  display: block;
+ 
+  text-align: center;
+}
+
+form.update{
+  background-color: transparent;
+}
+
+
+/* =========================== TESTE SWIPER SLIDES UPDATE ======================================*/
+#testimonials {
+  background: #eee9c7;
+  width: fit-content;
+  padding: 0;
+}
+
+h2#depo.title {
+  padding: 0 1.5rem;
+}
+#testimonials .container {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#testimonials blockquote {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 0.25rem;
+  border-color: transparent;
+}
+#testimonials blockquote p {
+  position: relative;
+  text-indent: 1.875rem;
+}
+#testimonials blockquote p span {
+  font: 700 2.5rem serif;
+
+  position: absolute;
+  top: -0.5rem;
+  left: -1.875rem;
+}
+/*Caixa contendo imagem e texto*/
+
+
+/*=================== SWIPER ==========*/
+.swiper-slide {
+  height: auto;
+  width: fit-content;
+  padding: 4rem 4rem;
+}
+.swiper-pagination-bullet {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+
+#testimonials > div > div > div.swiper-button-prev,
+#testimonials > div > div > div.swiper-button-next {
+  color: #190a12;
+}
+div.testimonial.swiper-slide.swiper-slide {
+  padding-top: 1rem;
+}
+h2#depo.title {
+  margin: 0, 0, 0, 0;}
+
+  .container {
+    width: 70rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.section header,
+  #testimonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container p{
+    font-size: 20px;
+  }
+.tabelas{
+  width: 100%;
+  background-color: #34343618;
+}
+.tabelas td  {
+  border:none;
+  padding: 8px;
+  background-color: #34343618;
+}
+.tabelas th {
+  border:none;
+  text-align: center;
+  padding: 8px;
+  background-color: #34343618;
+}
+.tabelas tr:hover{
+    background:#34343618;
+    color:rgb(0, 0, 0);
+}
+.tabelas thread{
+  color:rgb(0, 0, 0);
+  font-weight:bold;
+  background-color: #34343618;
+}
+.tabelas thread:hover{
+  color:rgb(0, 0, 0);
+  font-weight:bold;
+  background-color: #34343618;
 }

@@ -3,7 +3,9 @@
 <!-- Div responsável por apresentar todos os chamados abertos no sistema -->
 
 <div id="tabela">
-  <table style="width: 100%">
+  <div>
+  <table class="tabelas">
+    <thead>
     <h1 style="text-align: center; margin-bottom: 15px">Chamados Ativos</h1>
     <tr>
       <th>N° Laboratório</th>
@@ -11,18 +13,20 @@
       <th>Reportado</th>
     </tr>
     {% for i in range(0, (chamado|length) ,1) %}
-    <tr class="chamado">
+    <tr>
       <td>{{ chamado[i][0]}}</td>
       <td>{{ chamado[i][1]}}</td>
       <td>{{ chamado[i][2]}}</td>
     </tr>
     {%endfor%}
+    </thead>
   </table>
+  </div>
 </div>
 
 <section id="buttons">
   <a href="{{url_for('home')}}">
-    <button class="btn" href="home.html">Voltar</button>
+    <button class="button" href="home.html">Voltar</button>
   </a>
 </section>
 

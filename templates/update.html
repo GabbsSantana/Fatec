@@ -1,0 +1,129 @@
+{% extends "style.html" %} {% block head %} {{ super() }}
+ <!-- SWIPER -->
+ <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+<form method="post" class="update">
+  <section id="update_labs">
+
+    <div id="select_label">
+<h3>Selecione o laboratório</h3>
+    <!-- Opções de laboratórios para a seleção do usuário -->
+    <select name="laboratorios" id="laboratorios" >
+
+      <optgroup label="3° Andar">
+        <option class="select_opt" value="Laboratório 301">Laboratório 301</option>
+        <option class="select_opt" value="Laboratório 302">Laboratório 302</option>
+        <option class="select_opt" value="Laboratório 303">Laboratório 303</option>
+      </optgroup>
+      <optgroup label="4° Andar">
+        <option class="select_opt" value="Laboratório 401">Laboratório 401</option>
+        <option class="select_opt" value="Laboratório 402">Laboratório 402</option>
+        <option class="select_opt" value="Laboratório 404">Laboratório 404</option>
+        <option class="select_opt" value="Laboratório 405">Laboratório 405</option>
+        <option class="select_opt" value="Laboratório 406">Laboratório 406</option>
+        <option class="select_opt" value="Laboratório 407">Laboratório 407</option>
+        <option class="select_opt" value="Laboratório 408">Laboratório 408</option>
+        <option class="select_opt" value="Laboratório 409">Laboratório 409</option>
+        <option class="select_opt" value="Laboratório 411">Laboratório 411</option>
+        <option class="select_opt" value="Laboratório 412">Laboratório 412</option>
+      </optgroup>
+    </select>
+  
+  </div>
+ 
+
+  <section class="section" id="testimonials">
+    <!--DESABILITAR CONTAINER GRID-->
+    <div class="container">
+      <header>
+        <h2 class="title" id="depo">Selecione o Layout</h2>
+      </header>
+      <div class="testimonials swiper">
+        <div class="swiper-wrapper">
+          
+            <div class="testimonial swiper-slide">
+              <blockquote>
+                <p>
+                  Layout A
+                  <input type="radio" name="imagem"value="3x3" checked />
+                </p>
+                <img
+                id="update-lab"
+                src="{{url_for('static', filename='3x3' +'.png' )}}"
+                  >
+              </blockquote>
+            </div>
+            <div class="testimonial swiper-slide">
+              <blockquote>
+                <p>
+                  Layout B
+                  <input type="radio" name="imagem"value="4x3" />
+                </p>
+                <img
+                id="update-lab"
+                src="{{url_for('static', filename='4x3' +'.png' )}}"
+                  >
+              </blockquote>
+            </div>
+            <div class="testimonial swiper-slide">
+              <blockquote>
+                <p>
+                  Layout C
+                  <input type="radio" name="imagem"value="4x4" />
+                </p>
+                <img
+                id="update-lab"
+                src="{{url_for('static', filename='4x4' +'.png' )}}"
+                  >
+              </blockquote>
+            </div>
+        </div>
+           <!-- If we need navigation buttons -->
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+   
+       
+  </section>
+</section>
+    </section>
+<div id="btn_update">
+    <input type="submit" value="Alterar Layout" class="button" onclick="alert('Layout alterado com sucesso!')"/></div>
+  </form>
+
+
+ 
+  <script>
+    /** TESTIMONIALS Caroulsel,Slider */
+    const swiper = new Swiper('.swiper', {
+  breakpoints: {
+    375: {
+      setWrapperSize: true,
+      mousewheel: false,
+      slidesPerView: 1,
+      pagination: {
+        el: '.swiper-pagination'
+      }
+    },
+    1000: {
+      slidesPerView: 1,
+      setWrapperSize: true,
+      mousewheel: false,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      }
+    }
+  }
+  })
+  
+  if (window.innerWidth < 1000) {
+  let paginationPrev = document.querySelector('.swiper-button-prev')
+  let paginationNext = document.querySelector('.swiper-button-next')
+  paginationNext.parentNode.removeChild(paginationNext)
+  paginationPrev.parentNode.removeChild(paginationPrev)
+  }
+   
+  </script>
+ 
+  {% endblock %}
+
