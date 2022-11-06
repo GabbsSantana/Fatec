@@ -18,10 +18,12 @@
     rel="stylesheet"
     href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
    />
+   <link rel="shortcut icon" href="{{ url_for('static', filename='logo-mig.png') }}">
+
    
     <script src="https://unpkg.com/scrollreveal"></script> 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> 
-    <title>Home</title>
+    <title>SOS Fatec-Lab</title>
   </head>
   
   <body>
@@ -33,12 +35,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     {% block head %}
     <div id="app">
-      <header  >
+      
         <nav class="navbar navbar-light bg-light">
-          <a href="/" class="navbar-brand">FATEC - São José Dos Campos</a>
+          <a   id="nav-fatec" href="/" class="navbar-brand">
+          FATEC - Página Inicial
+        </a>
         </nav>
-      </header>
-      <h1 class="text-center jumbotron-small">SOS Fatec-Lab</h1>
+     
+      <h1 class="text-center jumbotron-small"><img id=logo src="{{url_for('static', filename='mig-bg.png' )}}" width="50" height="50" class="d-inline-block align-top" alt=""> SOS Fatec-Lab</h1>
 
 
       

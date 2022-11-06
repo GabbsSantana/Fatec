@@ -16,9 +16,12 @@ def openDB():
   return cur,connection 
 
 # Inicializando variável com os layouts vinculados aos Laboratórios
-cur,conn = openDB()
-cur.execute('select laboratorio_nome,layout from layout')
-layoutLab = cur.fetchall()
+def layouts():
+  cur,conn = openDB()
+  cur.execute('select laboratorio_nome,layout_nome from layout')
+  layoutLab = cur.fetchall()
+  conn.close()
+  return layoutLab
 
 
 # Inicializando o app FLASK
@@ -53,6 +56,7 @@ def select():
 # Rota responsável por receber nome e email do usuário
 @app.route('/layout/',methods=(['GET','POST']))
 def layout():  
+  layoutLab = layouts()
   if request.method == 'POST':
     nome = request.form['nome']
     email = request.form['e-mail']
@@ -134,12 +138,13 @@ def all():
 # Disponível apenas para o administrador
 @app.route('/update',methods=['GET','POST'])
 def update():
+  layoutLab = layouts()
   cur,con = openDB()
   if request.method == 'POST':
     lab = request.form['laboratorios']
     imagem = request.form['imagem']
     print(lab,imagem)
-    cur.execute('UPDATE layout SET layout = ? WHERE laboratorio_nome == ?',(imagem,lab))
+    cur.execute('UPDATE layout SET layout_nome = ? WHERE laboratorio_nome == ?',(imagem,lab))
     con.commit()
     con.close()
     return redirect(url_for('admin'))

@@ -17,7 +17,7 @@ def createSchemaDB():
   connection.execute('''CREATE TABLE layout(
   laboratorio_id INTEGER PRIMARY KEY AUTOINCREMENT,
   laboratorio_nome TEXT NOT NULL,
-  layout TEXT NOT NULL
+  layout_nome TEXT NOT NULL
 );''')
   connection.execute('''DROP TABLE IF EXISTS chamados;''')
   connection.execute('''CREATE TABLE chamados(
@@ -29,21 +29,23 @@ def createSchemaDB():
 
 def layout():
   cur,conn = openDB()
-  cur.execute("INSERT INTO layout(laboratorio_nome,layout) VALUES (?,?)", ('Laboratório 302','4x3')) 
-  cur.execute("INSERT INTO layout(laboratorio_nome,layout) VALUES (?,?)", ('Laboratório 303','3x3')) 
-  cur.execute("INSERT INTO layout(laboratorio_nome,layout) VALUES (?,?)", ('Laboratório 401','4x3')) 
-  cur.execute("INSERT INTO layout(laboratorio_nome,layout) VALUES (?,?)", ('Laboratório 402','4x4')) 
-  cur.execute("INSERT INTO layout(laboratorio_nome,layout) VALUES (?,?)", ('Laboratório 404','3x3')) 
-  cur.execute("INSERT INTO layout(laboratorio_nome,layout) VALUES (?,?)", ('Laboratório 405','3x3')) 
-  cur.execute("INSERT INTO layout(laboratorio_nome,layout) VALUES (?,?)", ('Laboratório 406','3x3')) 
-  cur.execute("INSERT INTO layout(laboratorio_nome,layout) VALUES (?,?)", ('Laboratório 407','3x3')) 
-  cur.execute("INSERT INTO layout(laboratorio_nome,layout) VALUES (?,?)", ('Laboratório 408','3x3')) 
-  cur.execute("INSERT INTO layout(laboratorio_nome,layout) VALUES (?,?)", ('Laboratório 409','3x3')) 
-  cur.execute("INSERT INTO layout(laboratorio_nome,layout) VALUES (?,?)", ('Laboratório 411','3x3')) 
-  cur.execute("INSERT INTO layout(laboratorio_nome,layout) VALUES (?,?)", ('Laboratório 412','3x3')) 
+  cur.execute("INSERT INTO layout(laboratorio_nome,layout_nome) VALUES (?,?)", ('Laboratório 301','4x3')) 
+  cur.execute("INSERT INTO layout(laboratorio_nome,layout_nome) VALUES (?,?)", ('Laboratório 302','4x3')) 
+  cur.execute("INSERT INTO layout(laboratorio_nome,layout_nome) VALUES (?,?)", ('Laboratório 303','3x3')) 
+  cur.execute("INSERT INTO layout(laboratorio_nome,layout_nome) VALUES (?,?)", ('Laboratório 401','4x3')) 
+  cur.execute("INSERT INTO layout(laboratorio_nome,layout_nome) VALUES (?,?)", ('Laboratório 402','4x4')) 
+  cur.execute("INSERT INTO layout(laboratorio_nome,layout_nome) VALUES (?,?)", ('Laboratório 404','3x3')) 
+  cur.execute("INSERT INTO layout(laboratorio_nome,layout_nome) VALUES (?,?)", ('Laboratório 405','3x3')) 
+  cur.execute("INSERT INTO layout(laboratorio_nome,layout_nome) VALUES (?,?)", ('Laboratório 406','3x3')) 
+  cur.execute("INSERT INTO layout(laboratorio_nome,layout_nome) VALUES (?,?)", ('Laboratório 407','3x3')) 
+  cur.execute("INSERT INTO layout(laboratorio_nome,layout_nome) VALUES (?,?)", ('Laboratório 408','3x3')) 
+  cur.execute("INSERT INTO layout(laboratorio_nome,layout_nome) VALUES (?,?)", ('Laboratório 409','3x3')) 
+  cur.execute("INSERT INTO layout(laboratorio_nome,layout_nome) VALUES (?,?)", ('Laboratório 411','3x3')) 
+  cur.execute("INSERT INTO layout(laboratorio_nome,layout_nome) VALUES (?,?)", ('Laboratório 412','3x3')) 
   conn.commit()
 
 
 
 
-
+createSchemaDB()
+layout()
