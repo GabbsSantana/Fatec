@@ -34,12 +34,11 @@ p,a{
   color: var(--base-color-text);
 }
 
+
 header img#logo {
  width: 10%;
  height: 10%;
- top: 15px;
- left: 15px;
- position: absolute;
+ 
 }
 
 h1 {
@@ -83,19 +82,31 @@ h1 {
   color: #b3c9c1;
 }
 
-section#capa {
-  text-align: center;
-  width: 50%;
-  margin: 20px auto;
+#capa{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  gap: 50px;
+  margin-bottom: 50px;
 }
-section#capa p {
-  margin-top: 40px;
+#capa p{
+  width: 500px;
+  font-family: var(--body-font);
+  font-size: 2rem;
+}
+#capa span{
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: #190a12;
+  font-style: italic;
 }
 
+
 section#capa img {
-  width: 35vw;
+  width: 40vw;
   border-radius: 2.5%;
-  margin: 2%;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 
 }
