@@ -6,21 +6,21 @@
     alt=""
   />
 
-  <p>
-    Sistema para a abertura de chamados para manutenção dos micros presentes no
-    laboratório da FATEC-São José Dos Campos <br />
+  <div id="espaco">
+    <p>
+      Sistema para a abertura de chamados para manutenção dos micros presentes
+      no laboratório da FATEC-São José Dos Campos <br />
 
-    <span> Abra um chamado para notificar o time de manutenção. </span>
-  </p>
-</section>
-
-<section id="buttons">
-  <a href="{{url_for('select')}}">
-    <button class="button" href="./select.html">Abrir Chamado</button>
-  </a>
-  <a href="{{url_for('login')}}">
-    <button class="button" href="./login.html">Painel Administrador</button>
-  </a>
+      <span> Abra um chamado para notificar o time de manutenção. </span
+      ><br /><br />
+      <a href="{{url_for('select')}}">
+        <button class="button" href="./select.html">Abrir Chamado</button>
+      </a>
+      <a href="{{url_for('login')}}">
+        <button class="button" href="./login.html">Painel Administrador</button>
+      </a>
+    </p>
+  </div>
 </section>
 
 {% endblock %}
