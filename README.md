@@ -33,6 +33,8 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 ## 📈 BURNDOWN
 ![image](https://user-images.githubusercontent.com/53665466/194783995-43a0de30-ae82-4905-a254-757de5d05e13.png)
 
+
+## 📊 Planejamento das entregas
 | Sprint 1 - Entregue  | Sprint 2 - Entregue | Sprint 3 - Em desenvolvimento | Sprint 4 - Previsão de Entrega |
 | ------------- | ------------- | ------------ | ------------- |
 | Estrutura HTML  | Definir qual banco de dados utilizar  | Estilização CSS | Sugestão de problemas para o usuário  |
