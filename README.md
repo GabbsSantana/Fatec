@@ -14,9 +14,9 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 
 ## 📖 TECNOLOGIAS UTILIZADAS
 
-### HTML | CSS | PYTHON | FLASK | SQLITE | BOOTSTRAP
+### Html | Css | Python | Flask | SQLITE | Bootstrap | Javascript
 
-![tech](https://user-images.githubusercontent.com/53665466/194787147-142ddb52-65fd-4c1c-a17e-53509d156000.png)
+![image](https://user-images.githubusercontent.com/53665466/200418928-4087e61d-6bd3-41a6-a213-954247235808.png)
 
 ## 📒 BACKLOG
 
