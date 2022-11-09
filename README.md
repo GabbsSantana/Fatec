@@ -14,23 +14,23 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 
 ## 📖 TECNOLOGIAS UTILIZADAS
 
-### HTML | CSS | PYTHON | FLASK | SQLITE | BOOTSTRAP
+### Html | Css | Python | Flask | SQLITE | Bootstrap | Javascript
 
-![tech](https://user-images.githubusercontent.com/53665466/194787147-142ddb52-65fd-4c1c-a17e-53509d156000.png)
+![image](https://user-images.githubusercontent.com/53665466/200418928-4087e61d-6bd3-41a6-a213-954247235808.png)
 
 ## 📒 BACKLOG
 
 ![image](https://user-images.githubusercontent.com/53665466/200192935-3cc4d9aa-55e6-4f74-a6e4-4a88de80ccfc.png)
 
-## 📈 BURNDOWN
+## 📈 BURNDOWN SPRINT 4 ( Em desenvolvimento )
 
-![image](https://user-images.githubusercontent.com/53665466/194783995-43a0de30-ae82-4905-a254-757de5d05e13.png)
+❎
 
 ## 📊 Planejamento das entregas
 
 | Sprint 1 - Entregue           | Sprint 2 - Entregue                  | Sprint 3 - Entregue          | Sprint 4 - Em Desenvolvimento        |
 | ----------------------------- | ------------------------------------ | ---------------------------- | ------------------------------------ |
-| Estrutura HTML                | Definir qual banco de dados utilizar | Estilização CSS              | Sugestão de problemas para o usuário |
+| Estrutura HTML                | Definir qual banco de dados utilizar | Estilização CSS              | Concluir estilização                 |
 | Flask incluído                | Criar login para admin               | Estilização Bootstrap        | Refatorar código                     |
 | Mapear 1 laboratório          | Modelagem do banco de dados          | Página para edição de Layout | Deploy da aplicação                  |
 | Criar layout de 1 laboratório | Conexão do SQLITE a aplicação        |                              |                                      |
