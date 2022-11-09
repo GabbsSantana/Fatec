@@ -22,9 +22,9 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 
 ![image](https://user-images.githubusercontent.com/53665466/200192935-3cc4d9aa-55e6-4f74-a6e4-4a88de80ccfc.png)
 
-## 📈 BURNDOWN
+## 📈 BURNDOWN SPRINT 4 ( Em desenvolvimento )
 
-![image](https://user-images.githubusercontent.com/53665466/194783995-43a0de30-ae82-4905-a254-757de5d05e13.png)
+❎
 
 ## 📊 Planejamento das entregas
 
