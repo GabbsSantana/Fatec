@@ -163,6 +163,18 @@ select#laboratorios {
   font-size: 15px;
   border-radius: 2.5px;
 }
+#select_form{
+  background-color: transparent;
+}
+section#labs{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#labs_img{
+  width: 40vw;
+  border-radius: 2.5%;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;}
 
 table,
 th,
