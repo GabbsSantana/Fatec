@@ -30,7 +30,7 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 
 | Sprint 1 - Entregue           | Sprint 2 - Entregue                  | Sprint 3 - Entregue          | Sprint 4 - Em Desenvolvimento        |
 | ----------------------------- | ------------------------------------ | ---------------------------- | ------------------------------------ |
-| Estrutura HTML                | Definir qual banco de dados utilizar | Estilização CSS              | Sugestão de problemas para o usuário |
+| Estrutura HTML                | Definir qual banco de dados utilizar | Estilização CSS              | Concluir estilização                 |
 | Flask incluído                | Criar login para admin               | Estilização Bootstrap        | Refatorar código                     |
 | Mapear 1 laboratório          | Modelagem do banco de dados          | Página para edição de Layout | Deploy da aplicação                  |
 | Criar layout de 1 laboratório | Conexão do SQLITE a aplicação        |                              |                                      |
