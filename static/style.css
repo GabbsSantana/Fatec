@@ -493,3 +493,30 @@ h2#depo.title {
   font-weight:bold;
   background-color: #34343618;
 }
+#formlogin{
+  background-color: transparent;
+  margin: auto;
+}
+#boxlogin{
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  background-color: #cabc9b;
+  border-radius: 15px;
+}
+#containers{
+  margin: auto;
+  text-align: center;
+  margin-top: 0%;
+}
+#h3login{
+  background-color: transparent;
+  margin-top: auto;
+  font-size: 300%;
+  color: white;
+}
+.inputlogin{
+  width:230px;
+  border-radius: 15px;
+  text-align: center;
+}
