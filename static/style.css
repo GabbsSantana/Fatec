@@ -313,7 +313,10 @@ div#layout {
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(214, 81, 81);
-  
+  background-color: white;
+}
+strong{
+  background-color: transparent;
 }
 
 section#update_labs{
@@ -519,4 +522,37 @@ h2#depo.title {
   width:230px;
   border-radius: 15px;
   text-align: center;
+}
+
+#popupbox{
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  transition: all 5s ease-in-out;
+}
+.close {
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.close:hover {
+  color: #06D85F;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: inherit;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
 }
