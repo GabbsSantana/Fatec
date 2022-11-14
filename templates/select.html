@@ -4,12 +4,7 @@
 
 <form id="select_form" method="post">
   <section id="labs">
-    <img
-      id="labs_img"
-      src="{{url_for('static', filename='labs.jpg')}}"
-      alt=""
-      srcset=""
-    />
+   
 
     <!-- Opções de laboratórios para a seleção do usuário -->
     <div>
@@ -40,16 +35,7 @@
   </section>
 </form>
 
-<div id="layout">
-  <section id="layout-image">
-    {% for imagem in layout %} {% if ( laboratorio in imagem)%}
-    <img
-      id="layout-lab"
-      src="{{url_for('static', filename=imagem[1]+'.png' )}}"
-      alt=""
-    />
 
-    {% endif %} {% endfor %}
   </section>
 
   {% endblock %} {% endblock %}

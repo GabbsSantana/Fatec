@@ -28,17 +28,14 @@ h1,h2{
   font-size: var(--title-font-size);
 
 }
+a {
+  text-decoration: none;
+  font-family: var(--body-font);
+}
 p,a{
   font-size: var(--subtitle-font-size);
   font-family: var(--title-font);
   color: var(--base-color-text);
-}
-
-
-header img#logo {
- width: 10%;
- height: 10%;
- 
 }
 
 h1 {
@@ -52,6 +49,11 @@ h1 {
 #logo1{
   display: inline;
 }
+header img#logo {
+  width: 10%;
+  height: 10%;
+  
+ }
 #nav-fatec{
   margin-left: 10px;
   display: inline-block;
@@ -84,12 +86,14 @@ h1 {
 
 #capa{
   display: flex;
-  justify-items: center;
   align-items: center;
-  justify-content: center;
-  width: 100vw;
-  gap: 50px;
-  margin-bottom: 50px;
+  justify-content: space-evenly;  
+
+}
+section#capa img {
+  width: 40vw;
+  border-radius: 2.5%;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 #capa p{
   width: 500px;
@@ -103,25 +107,11 @@ h1 {
   font-style: italic;
   
 }
-
-
-
-section#capa img {
-  width: 40vw;
-  border-radius: 2.5%;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-
-}
-
 section#buttons {
   text-align: center;
 }
 
-a {
-  text-decoration: none;
-  font-family: var(--body-font);
-  
-}
+
 .button {
   width: 200px;
   height: 30px;
@@ -140,12 +130,12 @@ a {
   transition-timing-function: ease-in;
   cursor: pointer;
 }
-
 section#labs {
-  display: block;
-  margin: auto;
   text-align: center;
-  margin: 100px;
+  display: flex;
+  height: 70vh;
+  align-items: center;
+    justify-content: center;
 }
 
 label {
@@ -166,15 +156,7 @@ select#laboratorios {
 #select_form{
   background-color: transparent;
 }
-section#labs{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-#labs_img{
-  width: 40vw;
-  border-radius: 2.5%;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;}
+
 
 table,
 th,
@@ -223,14 +205,31 @@ form{
 }
 
 div#done{
-  margin-top: 100px;
-  margin: auto;
+  margin: 50px auto;
+  
   text-align: center;
-  width:300px;
-  height:300px;
-  border:solid 1px;
-  border-radius:0px 20px 0px 20px;
-  border-color: rgb(49, 181, 204);
+  width:350px;
+  height:350px;
+  border-radius: 30px;
+background: linear-gradient(145deg, #1d6565, #227878);
+box-shadow:  5px 5px 10px #1d6565,
+             -5px -5px 10px #237b7b;
+
+
+}
+div#done p,div#done h3, div#done strong{
+  background-color: transparent;
+  color: #cec7b6;  
+  font-size: 20px;
+}
+div#done h3{
+  font-size: var(--title-font-size);
+  margin: 20px auto;
+  padding-top: 15px;
+  width: 300px;
+}
+div#done strong{
+  color: white;
 }
 
 #formulario_final {
@@ -342,7 +341,7 @@ section#update_labs{
   font-weight: 700;
   border: 1.5px solid black;
 }
-#update_labs .select_opt{
+  select .select_opt{
   font-weight: 700;
   color: #190a12;
 }
