@@ -36,7 +36,7 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 
 
 ## 📊 Planejamento das entregas
-| Sprint 1 - Entregue  | Sprint 2 - Entregue | Sprint 3 - Em desenvolvimento | Sprint 4 - Previsão de Entrega |
+| Sprint 1 - Entregue  | Sprint 2 - Entregue | Sprint 3 - Entregue | Sprint 4 - Em Desenvolvimento |
 | ------------- | ------------- | ------------ | ------------- |
 | Estrutura HTML  | Definir qual banco de dados utilizar  | Estilização CSS | Sugestão de problemas para o usuário  |
 | Flask incluído  | Criar login para admin  | Estilização Bootstrap | Refatorar código  |
