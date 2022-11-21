@@ -28,14 +28,17 @@ h1,h2{
   font-size: var(--title-font-size);
 
 }
-a {
-  text-decoration: none;
-  font-family: var(--body-font);
-}
 p,a{
   font-size: var(--subtitle-font-size);
   font-family: var(--title-font);
   color: var(--base-color-text);
+}
+
+
+header img#logo {
+ width: 10%;
+ height: 10%;
+ 
 }
 
 h1 {
@@ -49,11 +52,6 @@ h1 {
 #logo1{
   display: inline;
 }
-header img#logo {
-  width: 10%;
-  height: 10%;
-  
- }
 #nav-fatec{
   margin-left: 10px;
   display: inline-block;
@@ -86,14 +84,12 @@ header img#logo {
 
 #capa{
   display: flex;
+  justify-items: center;
   align-items: center;
-  justify-content: space-evenly;  
-
-}
-section#capa img {
-  width: 40vw;
-  border-radius: 2.5%;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  justify-content: center;
+  width: 100vw;
+  gap: 50px;
+  margin-bottom: 50px;
 }
 #capa p{
   width: 500px;
@@ -107,11 +103,25 @@ section#capa img {
   font-style: italic;
   
 }
+
+
+
+section#capa img {
+  width: 40vw;
+  border-radius: 2.5%;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+}
+
 section#buttons {
   text-align: center;
 }
 
-
+a {
+  text-decoration: none;
+  font-family: var(--body-font);
+  
+}
 .button {
   width: 200px;
   height: 30px;
@@ -130,12 +140,12 @@ section#buttons {
   transition-timing-function: ease-in;
   cursor: pointer;
 }
+
 section#labs {
+  display: block;
+  margin: auto;
   text-align: center;
-  display: flex;
-  height: 70vh;
-  align-items: center;
-    justify-content: center;
+  margin: 100px;
 }
 
 label {
@@ -153,10 +163,6 @@ select#laboratorios {
   font-size: 15px;
   border-radius: 2.5px;
 }
-#select_form{
-  background-color: transparent;
-}
-
 
 table,
 th,
@@ -205,31 +211,14 @@ form{
 }
 
 div#done{
-  margin: 50px auto;
-  
+  margin-top: 100px;
+  margin: auto;
   text-align: center;
-  width:350px;
-  height:350px;
-  border-radius: 30px;
-background: linear-gradient(145deg, #1d6565, #227878);
-box-shadow:  5px 5px 10px #1d6565,
-             -5px -5px 10px #237b7b;
-
-
-}
-div#done p,div#done h3, div#done strong{
-  background-color: transparent;
-  color: #cec7b6;  
-  font-size: 20px;
-}
-div#done h3{
-  font-size: var(--title-font-size);
-  margin: 20px auto;
-  padding-top: 15px;
-  width: 300px;
-}
-div#done strong{
-  color: white;
+  width:300px;
+  height:300px;
+  border:solid 1px;
+  border-radius:0px 20px 0px 20px;
+  border-color: rgb(49, 181, 204);
 }
 
 #formulario_final {
@@ -324,7 +313,10 @@ div#layout {
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(214, 81, 81);
-  
+  background-color: white;
+}
+strong{
+  background-color: transparent;
 }
 
 section#update_labs{
@@ -341,7 +333,7 @@ section#update_labs{
   font-weight: 700;
   border: 1.5px solid black;
 }
-  select .select_opt{
+#update_labs .select_opt{
   font-weight: 700;
   color: #190a12;
 }
@@ -503,4 +495,101 @@ h2#depo.title {
   color:rgb(0, 0, 0);
   font-weight:bold;
   background-color: #34343618;
+}
+#formlogin{
+  background-color: transparent;
+  margin: auto;
+}
+#boxlogin{
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  background-color: #207070;
+  border-radius: 15px;
+}
+#containers{
+  margin: auto;
+  text-align: center;
+  margin-top: 0%;
+}
+#h3login{
+  background-color: transparent;
+  margin-top: auto;
+  font-size: 300%;
+  color: white;
+}
+.inputlogin{
+  width:230px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#popupbox{
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  transition: all 5s ease-in-out;
+}
+.close {
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.close:hover {
+  color: #06D85F;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: inherit;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+.espacoentrebotao{
+  width: 200px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.espacoentrebotao:hover{
+background-color: rgb(49, 181, 204);
+border: antiquewhite;
+color: black;
+transition: 150ms;
+transition-delay: 10ms;
+transition-timing-function: ease-in;
+cursor: pointer;
+}
+.restricao{
+background: transparent;
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 100px;    
+text-align: center;
+line-height: 100px
+}
+.restricao p{
+
+  background-color: transparent;
+  z-index:9999;
+  text-align: center;
+  color: #00000033;
+  font-size: 300%;
+  font-family: var(--title-font)
 }

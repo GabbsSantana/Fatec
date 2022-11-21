@@ -4,23 +4,23 @@
 
 <div id="tabela">
   <div>
-    <table class="tabelas">
-      <thead>
-        <h1 style="text-align: center; margin-bottom: 15px">Chamados Ativos</h1>
-        <tr>
-          <th>N° Laboratório</th>
-          <th>N° Micro</th>
-          <th>Reportado</th>
-        </tr>
-        {% for i in range(0, (chamado|length) ,1) %}
-        <tr>
-          <td>{{ chamado[i][0]}}</td>
-          <td>{{ chamado[i][1]}}</td>
-          <td>{{ chamado[i][2]}}</td>
-        </tr>
-        {%endfor%}
-      </thead>
-    </table>
+  <table class="tabelas">
+    <thead>
+    <h1 style="text-align: center; margin-bottom: 15px">Chamados Ativos</h1>
+    <tr>
+      <th>N° Laboratório</th>
+      <th>N° Micro</th>
+      <th>Reportado</th>
+    </tr>
+    {% for i in range(0, (chamado|length) ,1) %}
+    <tr>
+      <td>{{ chamado[i][0]}}</td>
+      <td>{{ chamado[i][1]}}</td>
+      <td>{{ chamado[i][2]}}</td>
+    </tr>
+    {%endfor%}
+    </thead>
+  </table>
   </div>
 </div>
 
@@ -29,5 +29,8 @@
     <button class="button" href="admin.html">Voltar</button>
   </a>
 </section>
-
+<div class="restricao">
+  <p>
+      ACESSO RESTRITO
+  </p>
 {% endblock %}
