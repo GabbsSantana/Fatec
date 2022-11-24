@@ -200,7 +200,7 @@ div#layout textarea{
     cursor: pointer;
   }
 
-  span{
+  .span{
     background-color: rgb(32, 112, 112);
     color: white;
     border-radius: 10px;
@@ -467,31 +467,31 @@ h2#depo.title {
   .container p{
     font-size: 20px;
   }
-.tabelas{
+#tabelas table{
   width: 100%;
   background-color: #34343618;
 }
-.tabelas td  {
+#tabelas td  {
   border:none;
   padding: 8px;
   background-color: #34343618;
 }
-.tabelas th {
+#tabelas th {
   border:none;
   text-align: center;
   padding: 8px;
   background-color: #34343618;
 }
-.tabelas tr:hover{
+#tabelas tr:hover{
     background:#34343618;
     color:rgb(0, 0, 0);
 }
-.tabelas thread{
+#tabelas thread{
   color:rgb(0, 0, 0);
   font-weight:bold;
   background-color: #34343618;
 }
-.tabelas thread:hover{
+#tabelas thread:hover{
   color:rgb(0, 0, 0);
   font-weight:bold;
   background-color: #34343618;
@@ -592,4 +592,34 @@ line-height: 100px
   color: #00000033;
   font-size: 300%;
   font-family: var(--title-font)
+}
+
+label {
+  font-size: 15px;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+}
+
+#restricao{
+  background: transparent;
+  bottom: 0;
+  width: 100%;
+  height: 100px;    
+  text-align: center;
+  line-height: 100px
+  }
+
+#restricao p{
+
+    background-color: transparent;
+    z-index:9999;
+    text-align: center;
+    color: #00000033;
+    font-size: 300%;
+    font-family: var(--title-font)
+  }
+
+#form{
+  background-color: transparent;
 }
