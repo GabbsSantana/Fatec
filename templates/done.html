@@ -3,13 +3,17 @@
 <!-- Div responsável por apresentar ao usuário que o chamado foi aberto com sucesso -->
 
 <div id="done">
+  <br />
   <h3>Chamado Aberto com sucesso!</h3>
+  <br />
   <p><strong>Nome: </strong>{{data[0]}}</p>
+  <p><strong>E-mail: </strong>{{data[1]}}</p>
 
   <p><strong>Laboratório: </strong>{{laboratorio[0][12:15]}}</p>
-  <p><strong>Micro: </strong>{{laboratorio[1]}}</p>
+  <p><strong>Micro:: </strong>{{laboratorio[1]}}</p>
   <p><strong>Problema: </strong>{{laboratorio[2]}}</p>
-  <br />
+
+  <br /><br />
   <a href="{{url_for('home')}}">
     <button class="button" href="./home.html">Página Inicial</button>
   </a>

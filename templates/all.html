@@ -1,26 +1,28 @@
 {% extends "style.html" %} {% block head %} {{ super() }}
 
 <!-- Div responsável por apresentar todos os chamados abertos no sistema -->
-
+<script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
 <div id="tabela">
   <div>
-    <table class="tabelas">
-      <thead>
-        <h1 style="text-align: center; margin-bottom: 15px">Chamados Ativos</h1>
-        <tr>
-          <th>N° Laboratório</th>
-          <th>N° Micro</th>
-          <th>Reportado</th>
-        </tr>
-        {% for i in range(0, (chamado|length) ,1) %}
-        <tr>
-          <td>{{ chamado[i][0]}}</td>
-          <td>{{ chamado[i][1]}}</td>
-          <td>{{ chamado[i][2]}}</td>
-        </tr>
-        {%endfor%}
-      </thead>
-    </table>
+  <table id="tabelas">
+    <h1 style="text-align: center; margin-bottom: 15px">Chamados Ativos</h1>
+    <thead>
+    <tr>
+      <th>N° Laboratório</th>
+      <th>N° Micro</th>
+      <th>Reportado</th>
+    </tr>
+  </thead>
+    {% for i in range(0, (chamado|length) ,1) %}
+    <tr>
+      <td>{{ chamado[i][0]}}</td>
+      <td>{{ chamado[i][1]}}</td>
+      <td>{{ chamado[i][2]}}</td>
+    </tr>
+    {%endfor%}
+    
+  </table>
   </div>
 </div>
 
@@ -29,5 +31,16 @@
     <button class="button" href="admin.html">Voltar</button>
   </a>
 </section>
+<div id="restricao">
+  <p>
+      ACESSO RESTRITO
+  </p>
+  
+  <script>
+ $(document).ready(function () {
+    $('#tabelas').DataTable();
+});
+  </script>
+
 
 {% endblock %}

@@ -8,7 +8,7 @@
   <!-- Div responsável por apresentar ao usuário qual foi o Laboratório escolhido -->
 
 <div class="text-center">  
-  <h3 >Laboratório escolhido: <span>{{laboratorio[12:15]}}</span></h3>
+  <h3 >Laboratório escolhido: <span class="span">{{laboratorio[12:15]}}</span></h3>
 </div>
 
   <!-- Div responsável por apresentar ao usuário o LAYOUT do laboratório escolhido -->
@@ -48,7 +48,7 @@
                 <textarea name="problem" id="" cols="30" rows="2" required ></textarea>
     
             </label>
-            <input type="submit" value="Abrir Chamado" id="abrir_chamado" onclick="concluido()">
+            <input type="submit" value="Abrir Chamado" id="abrir_chamado">
             
         
         </form>
@@ -64,6 +64,5 @@
          
         </table>
       </div>
-
 
   {% endblock %}
