@@ -13,8 +13,6 @@ def createSchemaDB():
 	aluno_id INTEGER PRIMARY KEY,
  	nome text,
  	email text,
-  chamados_id,
-  FOREIGN KEY(chamados_id) REFERENCES chamados(id)
 );''')
   connection.execute('''DROP TABLE IF EXISTS layout;''')
   connection.execute('''CREATE TABLE layout(
@@ -52,5 +50,5 @@ def layout():
 
 
 
-#createSchemaDB()
-#layout()
+createSchemaDB()
+layout()
