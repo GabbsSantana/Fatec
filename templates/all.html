@@ -2,27 +2,54 @@
 
 <!-- Div responsável por apresentar todos os chamados abertos no sistema -->
 <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-<link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+<link
+  rel="stylesheet"
+  href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"
+/>
 <div id="tabela">
   <div>
-  <table id="tabelas">
-    <h1 style="text-align: center; margin-bottom: 15px">Chamados Ativos</h1>
-    <thead>
-    <tr>
-      <th>N° Laboratório</th>
-      <th>N° Micro</th>
-      <th>Reportado</th>
-    </tr>
-  </thead>
-    {% for i in range(0, (chamado|length) ,1) %}
-    <tr>
-      <td>{{ chamado[i][0]}}</td>
-      <td>{{ chamado[i][1]}}</td>
-      <td>{{ chamado[i][2]}}</td>
-    </tr>
-    {%endfor%}
-    
-  </table>
+    <form  method="post">
+
+    <table id="tabelas">
+      <h1 style="text-align: center; margin-bottom: 15px">Chamados Ativos</h1>
+      <thead>
+        <tr>
+          <th>N° Laboratório</th>
+          <th>N° Micro</th>
+          <th>Reportado</th>
+          <th>Concluído</th>
+        </tr>
+      </thead>
+      {% for i in range(0, (chamado|length) ,1) %}
+      <tr>
+        <td>{{ chamado[i][1]}}</td>
+        <td>{{ chamado[i][2]}}</td>
+        <td>{{ chamado[i][3]}}</td>
+        {% if (chamado[i][4] == 1) %}
+        <td>
+          <input
+            type="checkbox"
+            value=""
+            checked
+            disabled
+          />
+        </td>
+        {% else %}
+       
+        <td>
+          <input
+            type="checkbox"
+            value="{{chamado[i][0]}}"
+            id="lab_done"
+            onchange="status()"
+            name="lab_done"
+            onclick="return confirm('Tem certeza que deseja marcar esse chamado como concluído?')"
+          />
+        </td>
+        {% endif %}
+      </tr>
+      {%endfor%}
+    </table>
   </div>
 </div>
 
@@ -30,17 +57,24 @@
   <a href="{{url_for('admin')}}">
     <button class="button" href="admin.html">Voltar</button>
   </a>
+  <input type="submit" value="" class="auto_click" style="display: none;">
 </section>
 <div id="restricao">
-  <p>
-      ACESSO RESTRITO
-  </p>
-  
+  <p>ACESSO RESTRITO</p>
+
+  </form>
+
   <script>
- $(document).ready(function () {
-    $('#tabelas').DataTable();
-});
+    $(document).ready(function () {
+      $('#tabelas').DataTable()
+    })
+
+    function status() {
+      alert("Status alterado com sucesso!")
+      const submit = document.getElementsByClassName('auto_click')[0]
+      submit.click( )
+    }
   </script>
 
-
-{% endblock %}
+  {% endblock %}
+</div>

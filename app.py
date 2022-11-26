@@ -120,16 +120,24 @@ def login():
 
 # Rota para página all
 # Rota responsável por apresentar ao administrador todos os chamados abertos no sistema
-@app.route('/all/')
+@app.route('/all/',methods=['GET','POST'])
 def all():
   cur,conn = openDB()
   cur.execute('select nome,email from alunos')
   alunoDB = cur.fetchall()
   
    #Pegando dados sobre laboratório  
-  cur.execute("SELECT laboratorio,micro,problema FROM chamados")
+  cur.execute("SELECT id,laboratorio,micro,problema,done FROM chamados")
   lab = cur.fetchall()
-  
+
+  # Atualizando o status dos chamados para concluído
+  if request.method == 'POST':
+    status = request.form['lab_done']
+    cur.execute('''UPDATE chamados SET done = True where id=(?);''',(status,))
+    print(status)
+    conn.commit()
+    return redirect(url_for('all'))
+
   conn.close()
   return render_template('all.html',alunos=alunoDB,chamado=lab)
 

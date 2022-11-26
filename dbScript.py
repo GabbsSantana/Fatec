@@ -24,7 +24,8 @@ def createSchemaDB():
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   micro INTEGER NOT NULL,
   laboratorio TEXT NOT NULL,
-  problema TEXT NOT NULL
+  problema TEXT NOT NULL,
+  done BOOL
 );''')
 
 def layout():
@@ -47,5 +48,5 @@ def layout():
 
 
 
-createSchemaDB()
-layout()
+#createSchemaDB()
+#layout()
