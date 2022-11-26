@@ -1,5 +1,14 @@
 from flask import Flask,render_template,request,flash,redirect,url_for
+from dbScript import openDB
 import sqlite3
+
+def openDB():
+  connection = sqlite3.connect('database.db')
+  cur = connection.cursor()  
+  return cur,connection
+
+
+
 
 connection = sqlite3.connect('database.db')
 
@@ -9,11 +18,7 @@ class LaboratorioAtual:
 
 laboratorio_atual = LaboratorioAtual()
 
-# Função responsável por retornar o Cursos e Conector do banco de dados
-def openDB():
-  connection = sqlite3.connect('database.db')
-  cur = connection.cursor()  
-  return cur,connection 
+ 
 
 # Inicializando variável com os layouts vinculados aos Laboratórios
 def layouts():
@@ -125,8 +130,6 @@ def login():
 @app.route('/all/',methods=['GET','POST'])
 def all():
   cur,conn = openDB()
-  cur.execute('select nome,email from alunos')
-  alunoDB = cur.fetchall()
   
    #Pegando dados sobre laboratório  
   cur.execute("SELECT id,laboratorio,micro,problema,done,created_at FROM chamados")
@@ -140,10 +143,10 @@ def all():
     return redirect(url_for('all'))
 
   conn.close()
-  return render_template('all.html',alunos=alunoDB,chamado=lab)
+  return render_template('all.html',chamado=lab)
 
 
-# Rota responsável por editar layout de uma Laboratório
+# Rota responsável por editar layout de um Laboratório
 # Disponível apenas para o administrador
 @app.route('/update',methods=['GET','POST'])
 def update():
@@ -152,7 +155,6 @@ def update():
   if request.method == 'POST':
     lab = request.form['laboratorios']
     imagem = request.form['imagem']
-    print(lab,imagem)
     cur.execute('UPDATE layout SET layout_nome = ? WHERE laboratorio_nome == ?',(imagem,lab))
     con.commit()
     con.close()

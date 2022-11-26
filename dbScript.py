@@ -1,5 +1,6 @@
 import sqlite3
 
+
 def openDB():
   connection = sqlite3.connect('database.db')
   cur = connection.cursor()  
@@ -12,7 +13,7 @@ def createSchemaDB():
   connection.execute('''CREATE TABLE alunos(
 	aluno_id INTEGER PRIMARY KEY,
  	nome text,
- 	email text,
+ 	email text
 );''')
   connection.execute('''DROP TABLE IF EXISTS layout;''')
   connection.execute('''CREATE TABLE layout(
@@ -49,6 +50,6 @@ def layout():
 
 
 
-
+ 
 createSchemaDB()
 layout()

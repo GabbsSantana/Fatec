@@ -305,7 +305,7 @@ div#layout {
 }
 
 .container{
-  padding: 16px;
+  padding: 0 16px;
   text-align: center;
   margin-top: 0%;
 }
