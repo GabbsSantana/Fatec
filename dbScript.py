@@ -9,10 +9,13 @@ def openDB():
 def createSchemaDB(): 
   connection = sqlite3.connect('database.db')
   connection.execute(''' DROP TABLE IF EXISTS alunos;''')
-  connection.execute('''CREATE TABLE alunos (
-  aluno_id INTEGER PRIMARY KEY AUTOINCREMENT,
-  nome TEXT NOT NULL,
-  email TEXT NOT NULL);''')
+  connection.execute('''CREATE TABLE alunos(
+	aluno_id INTEGER PRIMARY KEY,
+ 	nome text,
+ 	email text,
+  chamados_id,
+  FOREIGN KEY(chamados_id) REFERENCES chamados(id)
+);''')
   connection.execute('''DROP TABLE IF EXISTS layout;''')
   connection.execute('''CREATE TABLE layout(
   laboratorio_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -25,7 +28,8 @@ def createSchemaDB():
   micro INTEGER NOT NULL,
   laboratorio TEXT NOT NULL,
   problema TEXT NOT NULL,
-  done BOOL
+  done BOOL,
+  created_at DATE
 );''')
 
 def layout():

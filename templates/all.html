@@ -8,7 +8,7 @@
 />
 <div id="tabela">
   <div>
-    <form  method="post">
+    <form  method="post" style="background-color: transparent;">
 
     <table id="tabelas">
       <h1 style="text-align: center; margin-bottom: 15px">Chamados Ativos</h1>
@@ -17,6 +17,7 @@
           <th>N° Laboratório</th>
           <th>N° Micro</th>
           <th>Reportado</th>
+          <th>Criado em</th>
           <th>Concluído</th>
         </tr>
       </thead>
@@ -25,6 +26,7 @@
         <td>{{ chamado[i][1]}}</td>
         <td>{{ chamado[i][2]}}</td>
         <td>{{ chamado[i][3]}}</td>
+        <td>{{chamado[i][5]}}</td>
         {% if (chamado[i][4] == 1) %}
         <td>
           <input
@@ -53,12 +55,7 @@
   </div>
 </div>
 
-<section id="buttons">
-  <a href="{{url_for('admin')}}">
-    <button class="button" href="admin.html">Voltar</button>
-  </a>
-  <input type="submit" value="" class="auto_click" style="display: none;">
-</section>
+<input type="submit" value="" class="auto_click" style="display: none;">
 <div id="restricao">
   <p>ACESSO RESTRITO</p>
 

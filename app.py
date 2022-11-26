@@ -67,10 +67,12 @@ def layout():
     cur,conn = openDB()
     cur.execute("INSERT INTO alunos (nome,email) VALUES(?,?)",
             (nome,email,))
+    
     conn.commit()
 
     # Inserindo Atributos na entidade CHAMADOS
-    cur.execute("INSERT INTO chamados(laboratorio,micro,problema) VALUES (?,?,?)", (laboratorio_atual.laboratorio,micro,problem,))
+    cur.execute("INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,DATE())", (laboratorio_atual.laboratorio,micro,problem,))
+    
     conn.commit()
 
     conn.close()
@@ -127,14 +129,13 @@ def all():
   alunoDB = cur.fetchall()
   
    #Pegando dados sobre laboratório  
-  cur.execute("SELECT id,laboratorio,micro,problema,done FROM chamados")
+  cur.execute("SELECT id,laboratorio,micro,problema,done,created_at FROM chamados")
   lab = cur.fetchall()
 
   # Atualizando o status dos chamados para concluído
   if request.method == 'POST':
     status = request.form['lab_done']
     cur.execute('''UPDATE chamados SET done = True where id=(?);''',(status,))
-    print(status)
     conn.commit()
     return redirect(url_for('all'))
 
