@@ -8,8 +8,6 @@ def openDB():
   return cur,connection
 
 
-
-
 connection = sqlite3.connect('database.db')
 
 class LaboratorioAtual:

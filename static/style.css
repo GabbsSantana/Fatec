@@ -211,14 +211,31 @@ form{
 }
 
 div#done{
-  margin-top: 100px;
-  margin: auto;
+  margin: 50px auto;
+  
   text-align: center;
-  width:300px;
-  height:300px;
-  border:solid 1px;
-  border-radius:0px 20px 0px 20px;
-  border-color: rgb(49, 181, 204);
+  width:350px;
+  height:350px;
+  border-radius: 30px;
+background: linear-gradient(145deg, #1d6565, #227878);
+box-shadow:  5px 5px 10px #1d6565,
+             -5px -5px 10px #237b7b;
+
+
+}
+div#done p,div#done h3, div#done strong{
+  background-color: transparent;
+  color: #cec7b6;  
+  font-size: 20px;
+}
+div#done h3{
+  font-size: var(--title-font-size);
+  margin: 20px auto;
+  padding-top: 15px;
+  width: 300px;
+}
+div#done strong{
+  color: white;
 }
 
 #formulario_final {
