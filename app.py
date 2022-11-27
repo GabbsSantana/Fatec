@@ -1,6 +1,8 @@
 from flask import Flask,render_template,request,flash,redirect,url_for
-from dbScript import openDB
+import dbScript
 import sqlite3
+from socket import gethostname
+
 
 def openDB():
   connection = sqlite3.connect('database.db')
@@ -166,4 +168,7 @@ def admin():
   return render_template('admin.html')
 
 if __name__ == '__main__':
-    app.run()
+    dbScript.createSchemaDB()
+    dbScript.layout()
+    if 'liveconsole' not in gethostname():
+        app.run()
