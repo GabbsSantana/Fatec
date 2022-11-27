@@ -164,4 +164,6 @@ def update():
 @app.route('/admin')
 def admin():
   return render_template('admin.html')
-app.run()
+
+if __name__ == '__main__':
+    app.run()
