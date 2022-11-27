@@ -31,18 +31,18 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 
 
 ## 📈 BURNDOWN
-![image](https://user-images.githubusercontent.com/53665466/200419089-fb24ce08-4bd4-4623-94e0-aeb9c36d1d7b.png)
+![image](https://user-images.githubusercontent.com/53665466/204161910-49ef6c0a-9d96-41e5-a0f9-5da1943763a9.png)
 
 
 
 ## 📊 Planejamento das entregas
-| Sprint 1 - Entregue  | Sprint 2 - Entregue | Sprint 3 - Entregue | Sprint 4 - Em Desenvolvimento |
+| Sprint 1 - Entregue  | Sprint 2 - Entregue | Sprint 3 - Entregue | Sprint 4 - Entregue |
 | ------------- | ------------- | ------------ | ------------- |
 | Estrutura HTML  | Definir qual banco de dados utilizar  | Estilização CSS | Sugestão de problemas para o usuário  |
 | Flask incluído  | Criar login para admin  | Estilização Bootstrap | Refatorar código  |
 | Mapear 1 laboratório  | Modelagem do banco de dados  | Página para edição de Layout |  Deploy da aplicação |
-| Criar layout de 1 laboratório  | Conexão do SQLITE a aplicação |  |   |
-
+| Criar layout de 1 laboratório  | Conexão do SQLITE a aplicação |  | Funcionalidade de concluir um chamado  |
+|                                |                               |  | Funcionalidade de filtro para tabela com todos os chamados |
 ## 🧑‍🚀EQUIPE
 
 
