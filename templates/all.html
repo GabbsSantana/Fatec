@@ -55,7 +55,23 @@
   </div>
 </div>
 
+<input type="submit" value="" class="auto_click" style="display: none;">
+<div id="restricao">
+  <p>ACESSO RESTRITO</p>
 
+  </form>
+
+  <script>
+    $(document).ready(function () {
+      $('#tabelas').DataTable()
+    })
+
+    function status() {
+      alert("Status alterado com sucesso!")
+      const submit = document.getElementsByClassName('auto_click')[0]
+      submit.click( )
+    }
+  </script>
 
   {% endblock %}
 </div>
