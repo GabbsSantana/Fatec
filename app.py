@@ -168,7 +168,7 @@ def admin():
   return render_template('admin.html')
 
 if __name__ == '__main__':
-    dbScript.createSchemaDB()
     dbScript.layout()
+    dbScript.createSchemaDB()
     if 'liveconsole' not in gethostname():
         app.run()
