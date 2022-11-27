@@ -200,7 +200,7 @@ div#layout textarea{
     cursor: pointer;
   }
 
-  span{
+  .span{
     background-color: rgb(32, 112, 112);
     color: white;
     border-radius: 10px;
@@ -211,14 +211,31 @@ form{
 }
 
 div#done{
-  margin-top: 100px;
-  margin: auto;
+  margin: 50px auto;
+  
   text-align: center;
-  width:300px;
-  height:300px;
-  border:solid 1px;
-  border-radius:0px 20px 0px 20px;
-  border-color: rgb(49, 181, 204);
+  width:350px;
+  height:350px;
+  border-radius: 30px;
+background: linear-gradient(145deg, #1d6565, #227878);
+box-shadow:  5px 5px 10px #1d6565,
+             -5px -5px 10px #237b7b;
+
+
+}
+div#done p,div#done h3, div#done strong{
+  background-color: transparent;
+  color: #cec7b6;  
+  font-size: 20px;
+}
+div#done h3{
+  font-size: var(--title-font-size);
+  margin: 20px auto;
+  padding-top: 15px;
+  width: 300px;
+}
+div#done strong{
+  color: white;
 }
 
 #formulario_final {
@@ -305,7 +322,7 @@ div#layout {
 }
 
 .container{
-  padding: 16px;
+  padding: 0 16px;
   text-align: center;
   margin-top: 0%;
 }
@@ -313,10 +330,7 @@ div#layout {
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(214, 81, 81);
-  background-color: white;
-}
-strong{
-  background-color: transparent;
+  
 }
 
 section#update_labs{
@@ -467,92 +481,32 @@ h2#depo.title {
   .container p{
     font-size: 20px;
   }
-.tabelas{
+#tabelas table{
   width: 100%;
   background-color: #34343618;
 }
-.tabelas td  {
+#tabelas td  {
   border:none;
   padding: 8px;
   background-color: #34343618;
 }
-.tabelas th {
+#tabelas th {
   border:none;
   text-align: center;
   padding: 8px;
   background-color: #34343618;
 }
-.tabelas tr:hover{
+#tabelas tr:hover{
     background:#34343618;
     color:rgb(0, 0, 0);
 }
-.tabelas thread{
+#tabelas thread{
   color:rgb(0, 0, 0);
   font-weight:bold;
   background-color: #34343618;
 }
-.tabelas thread:hover{
+#tabelas thread:hover{
   color:rgb(0, 0, 0);
   font-weight:bold;
   background-color: #34343618;
-}
-#formlogin{
-  background-color: transparent;
-  margin: auto;
-}
-#boxlogin{
-  margin: auto;
-  width: 300px;
-  height: 300px;
-  background-color: #207070;
-  border-radius: 15px;
-}
-#containers{
-  margin: auto;
-  text-align: center;
-  margin-top: 0%;
-}
-#h3login{
-  background-color: transparent;
-  margin-top: auto;
-  font-size: 300%;
-  color: white;
-}
-.inputlogin{
-  width:230px;
-  border-radius: 15px;
-  text-align: center;
-}
-
-#popupbox{
-  margin: 70px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  width: 30%;
-  transition: all 5s ease-in-out;
-}
-.close {
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
-.close:hover {
-  color: #06D85F;
-}
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
-  visibility: inherit;
-}
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
 }

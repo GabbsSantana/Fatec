@@ -1,5 +1,12 @@
 from flask import Flask,render_template,request,flash,redirect,url_for
+from dbScript import openDB
 import sqlite3
+
+def openDB():
+  connection = sqlite3.connect('database.db')
+  cur = connection.cursor()  
+  return cur,connection
+
 
 connection = sqlite3.connect('database.db')
 
@@ -9,11 +16,7 @@ class LaboratorioAtual:
 
 laboratorio_atual = LaboratorioAtual()
 
-# Função responsável por retornar o Cursos e Conector do banco de dados
-def openDB():
-  connection = sqlite3.connect('database.db')
-  cur = connection.cursor()  
-  return cur,connection 
+ 
 
 # Inicializando variável com os layouts vinculados aos Laboratórios
 def layouts():
@@ -67,10 +70,12 @@ def layout():
     cur,conn = openDB()
     cur.execute("INSERT INTO alunos (nome,email) VALUES(?,?)",
             (nome,email,))
+    
     conn.commit()
 
     # Inserindo Atributos na entidade CHAMADOS
-    cur.execute("INSERT INTO chamados(laboratorio,micro,problema) VALUES (?,?,?)", (laboratorio_atual.laboratorio,micro,problem,))
+    cur.execute("INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,DATE())", (laboratorio_atual.laboratorio,micro,problem,))
+    
     conn.commit()
 
     conn.close()
@@ -120,21 +125,26 @@ def login():
 
 # Rota para página all
 # Rota responsável por apresentar ao administrador todos os chamados abertos no sistema
-@app.route('/all/')
+@app.route('/all/',methods=['GET','POST'])
 def all():
   cur,conn = openDB()
-  cur.execute('select nome,email from alunos')
-  alunoDB = cur.fetchall()
   
    #Pegando dados sobre laboratório  
-  cur.execute("SELECT laboratorio,micro,problema FROM chamados")
+  cur.execute("SELECT id,laboratorio,micro,problema,done,created_at FROM chamados")
   lab = cur.fetchall()
-  
+
+  # Atualizando o status dos chamados para concluído
+  if request.method == 'POST':
+    status = request.form['lab_done']
+    cur.execute('''UPDATE chamados SET done = True where id=(?);''',(status,))
+    conn.commit()
+    return redirect(url_for('all'))
+
   conn.close()
-  return render_template('all.html',alunos=alunoDB,chamado=lab)
+  return render_template('all.html',chamado=lab)
 
 
-# Rota responsável por editar layout de uma Laboratório
+# Rota responsável por editar layout de um Laboratório
 # Disponível apenas para o administrador
 @app.route('/update',methods=['GET','POST'])
 def update():
@@ -143,7 +153,6 @@ def update():
   if request.method == 'POST':
     lab = request.form['laboratorios']
     imagem = request.form['imagem']
-    print(lab,imagem)
     cur.execute('UPDATE layout SET layout_nome = ? WHERE laboratorio_nome == ?',(imagem,lab))
     con.commit()
     con.close()

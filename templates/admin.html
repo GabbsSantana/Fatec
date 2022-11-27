@@ -1,13 +1,20 @@
 {% extends "style.html" %} {% block head %} {{ super() }}
-
+<div class="restricao">
+<p>
+    ACESSO RESTRITO
+</p>
+</div>
+<div style="margin-top: 3%;">
 <h1>Painel Administrativo</h1>
+<div style="margin-top: 3%;">
 <section id="buttons">
   <a href="{{url_for('update')}}">
-    <button class="button" href="./update.html">Alterar Layout</button>
+    <button class="espacoentrebotao" href="./update.html">Alterar Layout</button>
   </a>
   <a href="{{url_for('all')}}">
-    <button class="button" href="./all.html">Consultar chamados</button>
+    <button class="espacoentrebotao" href="./all.html">Consultar chamados</button>
   </a>
+</div>
 </section>
-
+</div>
 {% endblock %}

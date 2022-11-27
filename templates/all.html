@@ -1,33 +1,61 @@
 {% extends "style.html" %} {% block head %} {{ super() }}
 
 <!-- Div responsável por apresentar todos os chamados abertos no sistema -->
-
+<script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<link
+  rel="stylesheet"
+  href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"
+/>
 <div id="tabela">
   <div>
-  <table class="tabelas">
-    <thead>
-    <h1 style="text-align: center; margin-bottom: 15px">Chamados Ativos</h1>
-    <tr>
-      <th>N° Laboratório</th>
-      <th>N° Micro</th>
-      <th>Reportado</th>
-    </tr>
-    {% for i in range(0, (chamado|length) ,1) %}
-    <tr>
-      <td>{{ chamado[i][0]}}</td>
-      <td>{{ chamado[i][1]}}</td>
-      <td>{{ chamado[i][2]}}</td>
-    </tr>
-    {%endfor%}
-    </thead>
-  </table>
+    <form  method="post" style="background-color: transparent;">
+
+    <table id="tabelas">
+      <h1 style="text-align: center; margin-bottom: 15px">Chamados Ativos</h1>
+      <thead>
+        <tr>
+          <th>N° Laboratório</th>
+          <th>N° Micro</th>
+          <th>Reportado</th>
+          <th>Criado em</th>
+          <th>Concluído</th>
+        </tr>
+      </thead>
+      {% for i in range(0, (chamado|length) ,1) %}
+      <tr>
+        <td>{{ chamado[i][1]}}</td>
+        <td>{{ chamado[i][2]}}</td>
+        <td>{{ chamado[i][3]}}</td>
+        <td>{{chamado[i][5]}}</td>
+        {% if (chamado[i][4] == 1) %}
+        <td>
+          <input
+            type="checkbox"
+            value=""
+            checked
+            disabled
+          />
+        </td>
+        {% else %}
+       
+        <td>
+          <input
+            type="checkbox"
+            value="{{chamado[i][0]}}"
+            id="lab_done"
+            onchange="status()"
+            name="lab_done"
+            onclick="return confirm('Tem certeza que deseja marcar esse chamado como concluído?')"
+          />
+        </td>
+        {% endif %}
+      </tr>
+      {%endfor%}
+    </table>
   </div>
 </div>
 
-<section id="buttons">
-  <a href="{{url_for('admin')}}">
-    <button class="button" href="admin.html">Voltar</button>
-  </a>
-</section>
 
-{% endblock %}
+
+  {% endblock %}
+</div>
