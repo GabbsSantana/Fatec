@@ -1,5 +1,4 @@
 from flask import Flask,render_template,request,flash,redirect,url_for
-import dbScript
 import sqlite3
 from socket import gethostname
 
@@ -168,7 +167,5 @@ def admin():
   return render_template('admin.html')
 
 if __name__ == '__main__':
-    dbScript.layout()
-    dbScript.createSchemaDB()
     if 'liveconsole' not in gethostname():
         app.run()
