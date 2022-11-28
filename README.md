@@ -65,9 +65,9 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 https://user-images.githubusercontent.com/112488445/204183514-5a74d48b-aaf7-4faa-aefb-edf62d645637.mp4
 
 
-### Consulta de chamado:        
+### Alterar Layout de laboratório 
 https://user-images.githubusercontent.com/112169564/204176432-3b6fd4ae-23a8-4231-9c3f-aaec43dd4509.mp4
-
+### Consulta de chamado:
 https://user-images.githubusercontent.com/112169564/204176644-328c2045-d6ec-4e39-8df0-452e6e178923.mp4
 
 
