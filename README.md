@@ -57,17 +57,21 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 </table>
 
 
+
+
 ## 🎥 DEMONSTRAÇÂO
-### Execução do chamado:     
-https://user-images.githubusercontent.com/53665466/200211148-b2e339a2-18e5-4ab0-914c-12db119d4e73.mp4
+### Execução do chamado: 
+https://user-images.githubusercontent.com/112169564/204176299-f0901161-1665-408a-b58e-e7942fd3aa83.mp4
 
 ### Consulta de chamado:        
-https://user-images.githubusercontent.com/53665466/200211121-53a90296-2b20-44a0-b507-d8a61299219e.mp4
+https://user-images.githubusercontent.com/112169564/204176432-3b6fd4ae-23a8-4231-9c3f-aaec43dd4509.mp4
 
-### Editar Layout dos laboratórios
-https://user-images.githubusercontent.com/53665466/200211083-2c91cf12-2175-4bea-8d17-dcc2fba2d9ff.mp4
+https://user-images.githubusercontent.com/112169564/204176644-328c2045-d6ec-4e39-8df0-452e6e178923.mp4
 
 
+
+### Acesso negado:
+https://user-images.githubusercontent.com/112169564/204176519-046ea6ed-dd5a-4c1c-9af6-0ccf3f9c5471.mp4
 
 
 
