@@ -61,7 +61,9 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 
 ## 🎥 DEMONSTRAÇÂO
 ### Execução do chamado: 
-https://user-images.githubusercontent.com/112169564/204176299-f0901161-1665-408a-b58e-e7942fd3aa83.mp4
+
+https://user-images.githubusercontent.com/112488445/204183514-5a74d48b-aaf7-4faa-aefb-edf62d645637.mp4
+
 
 ### Consulta de chamado:        
 https://user-images.githubusercontent.com/112169564/204176432-3b6fd4ae-23a8-4231-9c3f-aaec43dd4509.mp4
