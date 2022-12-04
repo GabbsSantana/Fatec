@@ -1,7 +1,6 @@
 from flask import Flask,render_template,request,flash,redirect,url_for
 import sqlite3
-from socket import gethostname
-
+import dbScript
 
 def openDB():
   connection = sqlite3.connect('database.db')
@@ -67,15 +66,22 @@ def layout():
     micro = request.form['micro']
     problem = request.form['problem']
 
-    # Inserindo Atributos na entidade ALUNOS
     cur,conn = openDB()
-    cur.execute("INSERT INTO alunos (nome,email) VALUES(?,?)",
-            (nome,email,))
-    
-    conn.commit()
+
 
     # Inserindo Atributos na entidade CHAMADOS
     cur.execute("INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,DATE())", (laboratorio_atual.laboratorio,micro,problem,))
+    
+    conn.commit()
+
+    # Buscando ID do chamado para vincular ao Aluno
+    cur.execute("SELECT chamado_id from chamados ORDER BY chamado_id DESC LIMIT 1")
+    id_chamado = cur.fetchall()
+    print(id_chamado[0][0])
+
+    # Inserindo Atributos na entidade ALUNOS
+    cur.execute("INSERT INTO alunos (nome,email,chamado_id) VALUES(?,?,?)",
+            (nome,email,id_chamado[0][0],))
     
     conn.commit()
 
@@ -131,13 +137,13 @@ def all():
   cur,conn = openDB()
   
    #Pegando dados sobre laboratório  
-  cur.execute("SELECT id,laboratorio,micro,problema,done,created_at FROM chamados")
+  cur.execute("SELECT chamado_id,laboratorio,micro,problema,done,created_at FROM chamados")
   lab = cur.fetchall()
 
   # Atualizando o status dos chamados para concluído
   if request.method == 'POST':
     status = request.form['lab_done']
-    cur.execute('''UPDATE chamados SET done = True where id=(?);''',(status,))
+    cur.execute('''UPDATE chamados SET done = True where chamado_id=(?);''',(status,))
     conn.commit()
     return redirect(url_for('all'))
 
@@ -167,6 +173,4 @@ def admin():
   return render_template('admin.html')
 
 if __name__ == '__main__':
-    if 'liveconsole' not in gethostname():
-        from waitress import serve
-    serve(app, host="0.0.0.0", port=8080)
+    app.run()
