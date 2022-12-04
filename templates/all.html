@@ -2,16 +2,21 @@
 
 <!-- Div responsável por apresentar todos os chamados abertos no sistema -->
 <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
+
 <link
   rel="stylesheet"
   href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"
 />
+
 <div id="tabela">
   <div>
     <form  method="post" style="background-color: transparent;">
 
-    <table id="tabelas">
       <h1 style="text-align: center; margin-bottom: 15px">Chamados Ativos</h1>
+
+
+      <table id="tabelas">
       <thead>
         <tr>
           <th>N° Laboratório</th>
@@ -21,6 +26,7 @@
           <th>Concluído</th>
         </tr>
       </thead>
+      <tbody>
       {% for i in range(0, (chamado|length) ,1) %}
       <tr>
         <td>{{ chamado[i][1]}}</td>
@@ -28,17 +34,20 @@
         <td>{{ chamado[i][3]}}</td>
         <td>{{chamado[i][5]}}</td>
         {% if (chamado[i][4] == 1) %}
-        <td>
+        <td data-order="1">
           <input
             type="checkbox"
-            value=""
+            value="{{chamado[i][0]}}"
+            name="lab_done"
+
             checked
             disabled
           />
         </td>
         {% else %}
        
-        <td>
+        <td data-order="0">
+          
           <input
             type="checkbox"
             value="{{chamado[i][0]}}"
@@ -51,6 +60,7 @@
         {% endif %}
       </tr>
       {%endfor%}
+    </tbody>
     </table>
   </div>
 </div>
@@ -62,15 +72,34 @@
   </form>
 
   <script>
-    $(document).ready(function () {
+     $(document).ready(function () {
       $('#tabelas').DataTable()
-    })
+        // Listen to change event from checkbox to trigger re-sorting
+  $('#tabelas input[type="checkbox"]').on('change', function() {
+    // Update data-sort on closest <td>
+    $(this).closest('td').attr('data-order', this.checked ? 1 : 0);
+    
+    // Store row reference so we can reset its data
+    var $tr = $(this).closest('tr');
+    
+    // Force resorting
+    equipmentTable
+      .row($tr)
+      .invalidate()
+      .order([ 1, 'asc' ])
+      .draw();
+  })
+    }) 
 
     function status() {
       alert("Status alterado com sucesso!")
       const submit = document.getElementsByClassName('auto_click')[0]
       submit.click( )
     }
+
+
+
+ 
   </script>
 
   {% endblock %}

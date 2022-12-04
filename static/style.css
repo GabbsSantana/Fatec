@@ -602,7 +602,7 @@ text-align: center;
 line-height: 100px
 }
 .restricao p{
-
+margin-top: 15px;
   background-color: transparent;
   z-index:9999;
   text-align: center;
@@ -639,4 +639,39 @@ label {
 
 #form{
   background-color: transparent;
+}
+
+
+section#buttons > a{
+  margin-top: 50px;
+}
+.bt-layout{
+  width: 400px;
+  height: 300px;
+  background: url("admin2.png");
+  color: rgb(141, 56, 56);
+  border-radius: 25px;
+  margin-bottom: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.bt-layout:hover {
+  color: aqua;
+  background: url("layoult.png");
+}
+
+.bt-chamados{
+  width: 400px;
+  height: 300px;
+  background: url("admin.png");
+  color: rgb(141, 56, 56);
+  border-radius: 25px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.bt-chamados:hover{
+  background: url("chamados.png");
 }

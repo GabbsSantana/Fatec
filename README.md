@@ -31,18 +31,18 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 
 
 ## 📈 BURNDOWN
-![image](https://user-images.githubusercontent.com/53665466/200419089-fb24ce08-4bd4-4623-94e0-aeb9c36d1d7b.png)
+![image](https://user-images.githubusercontent.com/53665466/204161910-49ef6c0a-9d96-41e5-a0f9-5da1943763a9.png)
 
 
 
 ## 📊 Planejamento das entregas
-| Sprint 1 - Entregue  | Sprint 2 - Entregue | Sprint 3 - Entregue | Sprint 4 - Em Desenvolvimento |
+| Sprint 1 - Entregue  | Sprint 2 - Entregue | Sprint 3 - Entregue | Sprint 4 - Entregue |
 | ------------- | ------------- | ------------ | ------------- |
 | Estrutura HTML  | Definir qual banco de dados utilizar  | Estilização CSS | Sugestão de problemas para o usuário  |
 | Flask incluído  | Criar login para admin  | Estilização Bootstrap | Refatorar código  |
 | Mapear 1 laboratório  | Modelagem do banco de dados  | Página para edição de Layout |  Deploy da aplicação |
-| Criar layout de 1 laboratório  | Conexão do SQLITE a aplicação |  |   |
-
+| Criar layout de 1 laboratório  | Conexão do SQLITE a aplicação |  | Funcionalidade de concluir um chamado  |
+|                                |                               |  | Funcionalidade de filtro para tabela com todos os chamados |
 ## 🧑‍🚀EQUIPE
 
 
@@ -57,17 +57,23 @@ A metodologia abordada durante o projeto foi a Scrum, considerada um método ág
 </table>
 
 
+
+
 ## 🎥 DEMONSTRAÇÂO
-### Execução do chamado:     
-https://user-images.githubusercontent.com/53665466/200211148-b2e339a2-18e5-4ab0-914c-12db119d4e73.mp4
+### Execução do chamado: 
 
-### Consulta de chamado:        
-https://user-images.githubusercontent.com/53665466/200211121-53a90296-2b20-44a0-b507-d8a61299219e.mp4
-
-### Editar Layout dos laboratórios
-https://user-images.githubusercontent.com/53665466/200211083-2c91cf12-2175-4bea-8d17-dcc2fba2d9ff.mp4
+https://user-images.githubusercontent.com/112488445/204183514-5a74d48b-aaf7-4faa-aefb-edf62d645637.mp4
 
 
+### Alterar Layout de laboratório 
+https://user-images.githubusercontent.com/112169564/204176432-3b6fd4ae-23a8-4231-9c3f-aaec43dd4509.mp4
+### Consulta de chamado:
+https://user-images.githubusercontent.com/112169564/204176644-328c2045-d6ec-4e39-8df0-452e6e178923.mp4
+
+
+
+### Acesso negado:
+https://user-images.githubusercontent.com/112169564/204176519-046ea6ed-dd5a-4c1c-9af6-0ccf3f9c5471.mp4
 
 
 
