@@ -1,6 +1,6 @@
 from flask import Flask,render_template,request,flash,redirect,url_for
 import sqlite3
-import dbScript
+#import dbScript
 from datetime import timezone, datetime, timedelta
 
 
@@ -72,7 +72,7 @@ def layout():
 
 
     # Inserindo Atributos na entidade CHAMADOS
-    cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", (laboratorio_atual.laboratorio,micro,problem,datetime.now().strftime('%d-%m-%Y'),))
+    cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", (laboratorio_atual.laboratorio,micro,problem,datetime.now().strftime('%Y-%m-%d'),))
     
     conn.commit()
 

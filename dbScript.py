@@ -1,6 +1,10 @@
 import sqlite3
 from datetime import timezone, datetime, timedelta
+from random import randint
 
+lista_de_dias = []
+for i in range(0,26):
+  lista_de_dias.append(datetime.now() + timedelta(days = randint(-60,-5)))
 
 
 def openDB():
@@ -88,30 +92,30 @@ def fillDb():
   conn.commit()
 
   # Inserindo Atributos na entidade CHAMADOS
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 402','5','Cabo de rede danificado',datetime.now().strftime('%d-%m-%Y'),))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 401','5','Mouse não funciona','25-10-2022',))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 409','8','Cabo de rede danificado','15-09-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 303','8','Sem internet','05-09-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 401','12','reiniciou sozinho','01-09-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 408','12','monitor não liga','03-09-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 412','2','Sem internet','08-09-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 303','2','Cabo de rede danificado','30-11-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 412','5','Sem internet','22-11-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 303','4','Cabo de rede danificado','06-11-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 411','1','sem vnc instalado','09-11-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 401','8','monitor não liga','11-08-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 401','12','Mouse não funciona','30-08-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 301','10','Cabo de rede danificado','28-10-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 401','3','monitor não liga','15-10-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 301','1','Mouse não funciona','13-10-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 301','10','Cabo de rede danificado','01-10-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 401','12','mouse com mau contato','02-11-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 301','12','internet não funciona','15-11-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 301','1','sem espaço na memória','23-11-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 302','4','Mouse não funciona','12-10-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 303','10','Cabo de rede danificado','22-10-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 301','12','sem espaço na memória','01-12-2022'))
-  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 303','10','Cabo de rede danificado','30-10-2022'))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 402','5','Cabo de rede danificado',datetime.now().strftime('%Y-%m-%d'),))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 401','5','Mouse não funciona',lista_de_dias[0].strftime('%Y-%m-%d'),))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 409','8','Cabo de rede danificado',lista_de_dias[5].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 303','8','Sem internet',lista_de_dias[6].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 401','12','reiniciou sozinho',lista_de_dias[7].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 408','12','monitor não liga',lista_de_dias[8].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 412','2','Sem internet',lista_de_dias[9].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 303','2','PC muito lento',lista_de_dias[10].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 412','5','Sem internet',lista_de_dias[11].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 303','4','PC muito lento',lista_de_dias[12].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 411','1','sem vnc instalado',lista_de_dias[13].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 401','8','monitor não liga',lista_de_dias[14].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 401','12','Mouse não funciona',lista_de_dias[15].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 302','10','Cabo de rede danificado',lista_de_dias[15].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 401','3','monitor não liga',lista_de_dias[16].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 302','1','Mouse não funciona',lista_de_dias[17].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 301','10','Cabo de rede danificado',lista_de_dias[18].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 401','12','mouse com mau contato',lista_de_dias[19].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 301','12','internet não funciona',lista_de_dias[20].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 301','1','sem espaço na memória',lista_de_dias[21].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 302','4','Mouse não funciona',lista_de_dias[22].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 303','10','Cabo de rede danificado',lista_de_dias[23].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 301','12','sem espaço na memória',lista_de_dias[24].strftime('%Y-%m-%d')))
+  cur.execute("""INSERT INTO chamados(laboratorio,micro,problema,created_at) VALUES (?,?,?,?)""", ('Laboratório 303','10','Cabo de rede danificado',lista_de_dias[25].strftime('%Y-%m-%d')))
     
   conn.commit()
 

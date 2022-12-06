@@ -2,6 +2,9 @@
 
 <!-- Div responsável por apresentar todos os chamados abertos no sistema -->
 <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<!-- <script src="//cdn.datatables.net/plug-ins/1.13.1/sorting/date-euro.js"></script>
+ --><script type="text/javascript" src="<?=SITE_URL;?>js/moment.js"></script>
+
 
 
 <link
@@ -76,6 +79,7 @@
   <script>
      $(document).ready(function () {
       $('#tabelas').DataTable()
+      
         // Listen to change event from checkbox to trigger re-sorting
   $('#tabelas input[type="checkbox"]').on('change', function() {
     // Update data-sort on closest <td>
@@ -98,8 +102,10 @@
       const submit = document.getElementsByClassName('auto_click')[0]
       submit.click( )
     }
-
-
+    
+    
+    
+  
 
  
   </script>
