@@ -19,6 +19,7 @@
       <table id="tabelas">
       <thead>
         <tr>
+          <th>Usuário</th>
           <th>N° Laboratório</th>
           <th>N° Micro</th>
           <th>Reportado</th>
@@ -32,8 +33,9 @@
         <td>{{ chamado[i][1]}}</td>
         <td>{{ chamado[i][2]}}</td>
         <td>{{ chamado[i][3]}}</td>
+        <td>{{ chamado[i][4]}}</td>
         <td>{{chamado[i][5]}}</td>
-        {% if (chamado[i][4] == 1) %}
+        {% if (chamado[i][6] == 1) %}
         <td data-order="1">
           <input
             type="checkbox"
